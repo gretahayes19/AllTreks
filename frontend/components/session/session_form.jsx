@@ -23,51 +23,55 @@ class SessionForm extends React.Component {
     render() {
 
 
-        const {formTitle, formType} = this.props;
+        const { formTitle, formType, otherFormText, otherFormLink } = this.props;
 
-        const additionalFields = (formType === "Sign Up" ? (
+        const additionalFields = (formType === "Sign up" ? (
             <>
-                <label>
+                <label className="text-input">
                         <input
                         type="text"
-                        placeholder="Email"
-                        value={this.state.email}
-                        onChange={this.update("email")}
+                        placeholder="First name"
+                        value={this.state.firstname}
+                        onChange={this.update("firstname")}
                         required />
                 </label>
-                <label>
+                <label className="text-input">
                         <input
-                        type="password"
-                        placeholder="Password"
-                        value={this.state.password}
-                        onChange={this.update("password")}
+                        type="text"
+                        placeholder="Last name"
+                        value={this.state.lastname}
+                        onChange={this.update("lastname")}
                         required />
                 </label>
             </>
         ) : "" )
 
         return(
-            <div>
-                <h1>{formTitle}</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        <input 
-                            type="text" 
-                            placeholder="Email"
-                            value={this.state.email}
-                            onChange={this.update("email")}
-                            required/>
-                    </label>
-                    <label>
-                        <input 
-                            type="password" 
-                            placeholder="Password"
-                            value={this.state.password}
-                            onChange={this.update("password")}
-                            required/>
-                    </label>
-                    <button>{formType}</button>
-                </form>
+            <div className="session-background">
+                <div className="session-form">
+                    <h1>{formTitle}</h1>
+                    <form onSubmit={this.handleSubmit}>
+                        {additionalFields}
+                        <label className="text-input">
+                            <input 
+                                type="text" 
+                                placeholder="Email"
+                                value={this.state.email}
+                                onChange={this.update("email")}
+                                required/>
+                        </label>
+                        <label className="text-input">
+                            <input 
+                                type="password" 
+                                placeholder="Password"
+                                value={this.state.password}
+                                onChange={this.update("password")}
+                                required/>
+                        </label>
+                        <button className="primary-button">{formType}</button>
+                    </form>
+                    <p>{otherFormText} {otherFormLink}</p>
+                </div>
             </div>
         )
     }

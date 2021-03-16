@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import SessionForm from "./session_form";
-import { signup, login } from "../../actions/session_actions";
+import { signUp, login } from "../../actions/session_actions";
 
 
 
@@ -15,11 +15,14 @@ const mSTP = (state) => ({
         lastname: "",
         email: "",
         password: ""
-    }
+    },
+    otherFormText: "Don't have an account?",
+    otherFormLink: <Link to="/signup" className="inline-link">Sign up for free</Link>
 })
 
 const mDTP = (dispatch) => ({
-    processForm: (user) => dispatch(login(user))
+    processForm: (user) => dispatch(signUp(user)),
+    login: (user) => dispatch(login(user)),
 })
 
 export default connect(mSTP, mDTP)(SessionForm)

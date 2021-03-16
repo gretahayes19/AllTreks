@@ -1,12 +1,19 @@
 import React from "react";
-import SessionForm from './session/session_form'
 import { Route } from "react-router-dom";
 import SignUpFormContainer from './session/signup_form_container'
+import LoginFormContainer from './session/login_form_container'
+import NavBarContainer from './nav/nav_container'
+import HomeContainer from './home/home_container'
+import {AuthRoute, ProtectedRoute} from '../util/route_util'
 
 const App = () => (
     <div>
-        <h1>Welcome to AllTreks!!!</h1>
-        <SignUpFormContainer />
+        <header>
+            <NavBarContainer />
+        </header>
+        <Route exact path="/" component={HomeContainer} />
+        <AuthRoute path="/signup" component={SignUpFormContainer} />
+        <AuthRoute path="/login" component={LoginFormContainer} />
     </div>
 );
 

@@ -1,0 +1,72 @@
+@import '../variables.scss';
+
+header {
+    font-family: $navFont;
+    border-bottom: 1px solid $lightGrey;
+}
+
+.nav-bar {
+    display: flex;
+    height: 60px;
+    margin: 0px 8px;
+}
+
+.logo-title-div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $grey;
+    font-size: 25px;
+}
+
+.nav-links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.user-nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.mountain-logo {
+    color: $logoGreen;
+    margin: 8px;
+    font-size: 22px;
+}
+
+.login-button {
+    font-size: 13px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-left: 8px;
+    background-color: $buttonBlue;
+    border: 2px solid $buttonBlue;
+    color: white;
+}
+
+.login-button:hover {
+    background-color: $buttonBlueHover;
+    border: 2px solid $buttonBlueHover;
+}
+
+.sign-up-button {
+    font-size: 13px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-left: 8px;
+    border: 2px solid $buttonBlue;
+    color: $buttonBlue;
+}
