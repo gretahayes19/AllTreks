@@ -4,8 +4,17 @@ const initialState = () => ({
     currentUserId: null
 })
 
-
-const SessionReducer = (state = initialState, action) => {
+const sessionReducer = (state = initialState, action) => {
     Object.freeze(state);
-    let newState = Object.assign()
+    let newState = Object.assign({}, state);
+    switch (action.type) {
+        case RECEIVE_CURRENT_USER:
+            return {currentUserId: action.user.id}
+        case LOGOUT_CURRENT_USER:
+            return initialState;
+        default:
+           return state;
+    }
 }
+
+export default sessionReducer
