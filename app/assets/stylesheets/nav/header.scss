@@ -70,3 +70,8 @@ header {
     border: 2px solid $buttonBlue;
     color: $buttonBlue;
 }
+
+.sign-up-button:hover {
+    color: $buttonBlueHover;
+    border: 2px solid $buttonBlueHover;
+}

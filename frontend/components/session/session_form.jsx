@@ -23,7 +23,7 @@ class SessionForm extends React.Component {
     render() {
 
 
-        const { formTitle, formType, otherFormText, otherFormLink } = this.props;
+        const { errors, formTitle, formType, otherFormText, otherFormLink } = this.props;
 
         const additionalFields = (formType === "Sign up" ? (
             <>
@@ -45,6 +45,14 @@ class SessionForm extends React.Component {
                 </label>
             </>
         ) : "" )
+
+        const errorsComp = (errors ? (
+            <ul className="form-errors">
+                {errors.map((error, idx) => (
+                    <li key={idx}>{error}</li>
+                ))}
+            </ul>
+        ) : "")
 
         return(
             <div className="session-background">
@@ -68,6 +76,7 @@ class SessionForm extends React.Component {
                                 onChange={this.update("password")}
                                 required/>
                         </label>
+                        {errorsComp}
                         <button className="primary-button">{formType}</button>
                     </form>
                     <p>{otherFormText} {otherFormLink}</p>
