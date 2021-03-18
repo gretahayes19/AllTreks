@@ -4,3 +4,11 @@ export const fetchPark = parkId => (
         method: "GET"
     })
 )
+
+
+export const fetchParkHikes = parkId => (
+    $.ajax({
+        url: `api/parks/${parkId}/hikes`,
+        method: "GET"
+    })
+)

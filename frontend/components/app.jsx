@@ -5,6 +5,7 @@ import LoginFormContainer from './session/login_form_container'
 import NavBarContainer from './nav/nav_container'
 import HomeContainer from './home/home_container'
 import ParksContainer from './parks/parks_container'
+import Footer from './nav/footer'
 import {AuthRoute, ProtectedRoute} from '../util/route_util'
 
 const App = () => (
@@ -16,6 +17,7 @@ const App = () => (
         <Route path="/parks/:parkId" component={ParksContainer} />
         <AuthRoute path="/signup" component={SignUpFormContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />
+        <Route path="/" component={Footer}></Route>
     </div>
 );
 

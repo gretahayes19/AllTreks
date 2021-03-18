@@ -1,11 +1,12 @@
 import { connect } from "react-redux";
 import ParkShow from "./parks";
-import { fetchPark } from "../../actions/park_actions";
+import { fetchPark, fetchParkHikes } from "../../actions/park_actions";
 
 const mSTP = (state, ownProps) => {
     
     return {
-        park: state.entities.parks[ownProps.match.params.parkId],    
+        park: state.entities.parks[ownProps.match.params.parkId], 
+        hikes: Object.values(state.entities.hikes)  
     }
 
 }
@@ -14,7 +15,8 @@ const mDTP = (dispatch) => {
     // debugger
     return {
     
-        fetchPark: parkId => dispatch(fetchPark(parkId))
+        fetchPark: parkId => dispatch(fetchPark(parkId)),
+        fetchParkHikes: parkId => dispatch(fetchParkHikes(parkId))
     }
 }
 

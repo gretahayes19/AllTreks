@@ -7,7 +7,11 @@ Rails.application.routes.draw do
       
       resources :users, only: [:show, :create, :update]
 
-      resources :parks, only: [:show]
+      resources :parks, only: [:show] do
+        resources :hikes, only: [:index]
+      end
+
+      resources :hikes, only: [:show]
 
 
       resource :session, only: [:create, :destroy]

@@ -64,7 +64,63 @@
 
 .park-info-details article {
     display: block;
-    // width: 50%;
     flex-basis: 50%;
 
+}
+
+.park-actions {
+    display: flex;
+    padding: 24px 0;
+    max-width: 763px;
+    position: relative;
+}
+
+.park-action {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    color: $buttonGreen;
+
+    p {
+        color: $buttonGreen;
+        margin-top: 10px;
+    }
+
+    a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        background: inherit;
+        border: none;
+        outline: none;
+    }
+
+    svg {
+        font-size: 1.5rem;
+        padding: 18px;
+        border-radius: 50%;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.24), 0 0 8px 0 rgba(0,0,0,.08);
+        transform: scale(1);
+        transition: transform 0.4s;
+    }
+}
+
+.park-action:hover {
+    
+    svg {
+        transform: scale(1.12);
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.44), 0 0 8px 0 rgba(0,0,0,.08);
+    }
+
+    p {
+        color: $buttonHoverGreen;
+    }
+}
+
+.hike {
+    img {
+        max-width: 200px;
+    }
 }
