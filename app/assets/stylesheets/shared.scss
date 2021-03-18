@@ -1,0 +1,30 @@
+@import "./variables.scss";
+
+.header-text3 {
+    font-family: $headerFont;
+    color: $darkGrey;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.38;
+}
+
+
+.header-text2 {
+    font-family: $headerFont;
+    font-size: 16px;
+    color: $darkGrey;
+    font-weight: 600;
+    padding-bottom: 8px;
+
+
+}
+
+
+.header-text1 {
+    font-size: 32px;
+    font-family: $headerFont;
+    color: $darkGrey;
+    font-weight: 600;
+    margin: 16px 0 0;
+    padding-bottom: 8px;
+}

@@ -20,3 +20,32 @@
     left: 50%;
     margin-left: -45%;
 }
+
+.homepage-sub {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 550px;
+    background-color: white;
+    text-align: center;
+    margin: auto;
+
+
+}
+
+.homepage-sub h2 {
+    font-family: $titleFont;
+    font-size: 50px;
+    color: $darkGrey;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.homepage-sub p {
+    width: 54%;
+    margin: 0 auto;
+    font-size: 20px;
+    color: $grey;
+    line-height: 2;
+    font-family: $titleFont;
+}

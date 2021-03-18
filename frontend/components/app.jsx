@@ -4,6 +4,7 @@ import SignUpFormContainer from './session/signup_form_container'
 import LoginFormContainer from './session/login_form_container'
 import NavBarContainer from './nav/nav_container'
 import HomeContainer from './home/home_container'
+import ParksContainer from './parks/parks_container'
 import {AuthRoute, ProtectedRoute} from '../util/route_util'
 
 const App = () => (
@@ -12,6 +13,7 @@ const App = () => (
             <NavBarContainer />
         </header>
         <Route exact path="/" component={HomeContainer} />
+        <Route path="/parks/:parkId" component={ParksContainer} />
         <AuthRoute path="/signup" component={SignUpFormContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />
     </div>
