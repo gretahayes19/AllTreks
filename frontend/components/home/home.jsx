@@ -1,5 +1,5 @@
 import React from 'react'
-
+import SearchBarContainer from '../search/search_container'
 
 const Home = ({currentUser}) => {
     return (
@@ -7,6 +7,9 @@ const Home = ({currentUser}) => {
             <div className="homepage">
                 <div className="homepage-content">
                     <h1>Find your next favorite trail</h1>
+                    <div className="search-bar">
+                        <SearchBarContainer />
+                    </div>
                 </div>
 
             </div>

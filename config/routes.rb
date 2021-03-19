@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
       resources :hikes, only: [:show]
 
-
+      resources :searches, only: :index
       resource :session, only: [:create, :destroy]
     end
 

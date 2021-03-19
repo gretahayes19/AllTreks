@@ -1,5 +1,6 @@
 import React from 'react'
 import ParkMap from '../maps/park_map'
+import HikeIndex from '../hikes/hike_index'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRoute, faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -21,11 +22,7 @@ class ParkShow extends React.Component {
         if (!this.props.hikes) return null;
 
         const {park, hikes} = this.props 
-        const hikelist = hikes.map(hike => (
-            <li key={hike.id}>{hike.name}
-                <img src={hike.coverPhotoURL} alt="alt"/>
-            </li>
-        ))
+
         return(
             <>
                 <div className="park-content-wrap">
@@ -60,8 +57,9 @@ class ParkShow extends React.Component {
                             </article>
                         </div>
                     </section>
-                    <section className="hike">
-                        <ul>{hikelist}</ul>
+                    <section className="hike-index-container">
+                        <h2 className="header-text-park-info">Top Trails ({hikes.length})</h2>
+                        <HikeIndex hikes={hikes} park={park}/>
                     </section>
 
                 </div>

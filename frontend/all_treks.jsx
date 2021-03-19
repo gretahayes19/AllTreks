@@ -4,6 +4,7 @@ import configureStore from './store/store'
 import Root from './components/root'
 import { receivePark, fetchPark, fetchParkHikes} from './actions/park_actions'
 import * as ParkAPIUtil from './util/park_api_util'
+import { fetchSearchResults } from './actions/search_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
     let root = document.getElementById("root");
@@ -26,8 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.dispatch = store.dispatch;
     window.fetchPark = fetchPark;
     window.fetchParkHikes = fetchParkHikes;
-
     window.receivePark = receivePark;
+    window.fetchSearchResults = fetchSearchResults;
 
     window.fetchParkAPI = ParkAPIUtil.fetchPark
     ReactDOM.render(<Root store={store}/>, root)

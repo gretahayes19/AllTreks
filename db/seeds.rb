@@ -35,3 +35,13 @@ hike1 = Hike.create(name: "Blue Lake Trail",
 
 hike1_cover = open("https://all-treks-seeds.s3.amazonaws.com/IMG_1113.jpeg")
 hike1.coverPhoto.attach(io: hike1_cover, filename: "IMG_1113.jpeg")
+
+hike2 = Hike.create(name: "Cascade Pass and Sahale Arm Trail", 
+                    description: "Cascade Pass and Sahale Arm Trail is a 11.6 mile heavily trafficked out and back trail located near Rockport, Washington that features a lake and is rated as difficult. The trail is primarily used for hiking and is best used from June until October.",
+                    difficulty: "hard", 
+                    distance: 11.6, 
+                    route_type: "Out & back",
+                    park_id: park1.id)
+
+hike2_cover = open("https://all-treks-seeds.s3.amazonaws.com/IMG_1037.jpeg")
+hike2.coverPhoto.attach(io: hike2_cover, filename: "IMG_1037.jpeg")

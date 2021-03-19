@@ -1,3 +1,34 @@
 // Place all the styles related to the api/hikes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "./variables.scss";
+
+
+.hike-item {
+    display: flex;
+    height: 224px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.24), 0 0 8px 0 rgba(0,0,0,.08);
+    background-color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+
+.hike-index-container {
+    margin-top: 15px;
+    margin-bottom: 30px
+}
+
+.hike-item-pics {
+    height: 192px;
+    min-width: 288px;
+    width: 288px;
+    border-radius: 8px;
+    margin-right: 24px;
+}
