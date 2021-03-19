@@ -61,6 +61,7 @@
     background-color: $buttonGreen;
     color: white;
     font-size: 14px;
+    font-weight: 600;
     text-align: center;
 }
 
@@ -70,9 +71,11 @@
 }
 
 .session-form input::placeholder {
-    color: $grey;
+    color: $borderGrey;
     font-size: 14px;
 }
+
+
 
 .primary-button:hover {
     background-color: $buttonHoverGreen;
@@ -105,11 +108,12 @@ textarea {
     width: 100%;
 }
 
-.text-imput:hover {
+.text-input:hover {
     border: 1px solid $green;
 }
 
 .text-input:focus-within {
     border: 2px solid $green;
 }
+
 

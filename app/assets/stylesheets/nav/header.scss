@@ -49,6 +49,22 @@ header {
 
 .login-button {
     font-size: 13px;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-left: 8px;
+    border: 2px solid $buttonBlue;
+    color: $buttonBlue;
+}
+
+.login-button:hover {
+    color: $buttonBlueHover;
+    border: 2px solid $buttonBlueHover;
+}
+
+.sign-up-button {
+    font-size: 13px;
+    font-weight: 600;
     padding: 10px 15px;
     border-radius: 8px;
     margin-left: 8px;
@@ -57,21 +73,7 @@ header {
     color: white;
 }
 
-.login-button:hover {
-    background-color: $buttonBlueHover;
-    border: 2px solid $buttonBlueHover;
-}
-
-.sign-up-button {
-    font-size: 13px;
-    padding: 10px 15px;
-    border-radius: 8px;
-    margin-left: 8px;
-    border: 2px solid $buttonBlue;
-    color: $buttonBlue;
-}
-
 .sign-up-button:hover {
-    color: $buttonBlueHover;
+    background-color: $buttonBlueHover;
     border: 2px solid $buttonBlueHover;
 }

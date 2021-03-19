@@ -35,6 +35,8 @@ class SearchBar extends React.Component {
         this.props.fetchSearchResults(this.state.query)
     }
 
+
+
     render () {
 
         const {results} = this.props  
@@ -49,8 +51,12 @@ class SearchBar extends React.Component {
                     </form>
                 </div> 
                 <div className="search-results">
-                    {this.state.focus ? <SearchResults results={results} /> : null}       
-                </div>
+                    {/* {this.state.focus ? ( */}
+                        
+                        <SearchResults results={results} query={this.state.query}  fetchSearchResults={this.props.fetchSearchResults}/>
+                       
+                    // ) : null}   
+                    </div>
             </>
         )
     }

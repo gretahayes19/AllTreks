@@ -2,7 +2,7 @@ class Api::SearchesController < ApplicationController
 
     def index
         if params[:query]
-            split_query = params[:query].split("").join("%")
+            split_query = params[:query].split(" ").join("%")
             @hikes = Hike.where("name ILIKE ?", "%#{split_query}%")
             @parks = Park.where("name ILIKE ?", "%#{split_query}%")
         else

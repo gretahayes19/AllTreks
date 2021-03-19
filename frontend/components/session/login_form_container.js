@@ -15,7 +15,7 @@ const mSTP = (state) => ({
         password: ""
     },
     otherFormText: "Don't have an account?",
-    otherFormLink: <Link to="/signup" className="inline-link">Sign up for free</Link>
+    otherFormLink: <Link to="/signup" className="inline-link">Sign up</Link>
 })
 
 const mDTP = (dispatch) => ({
