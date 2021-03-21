@@ -10,6 +10,7 @@ require "open-uri"
 
 User.destroy_all
 ApplicationRecord.connection.reset_pk_sequence!('users')
+demo = User.create(firstname: "Demo", lastname: "User", email: "demo@alltreks.com", password: "password123")
 user1 = User.create(firstname: "Greta", lastname: "Hayes", email: "greta@hayes.com", password: "Ginger125")
 user2 = User.create(firstname: "Anna", lastname: "Hayes", email: "anna@hayes.com", password: "Ginger125")
 user3 = User.create(firstname: "Helen", lastname: "Bright", email: "helen@bright.com", password: "Ginger125")
@@ -31,6 +32,7 @@ hike1 = Hike.create(name: "Blue Lake Trail",
                     difficulty: "moderate", 
                     distance: 4.6, 
                     route_type: "Out & back",
+      
                     park_id: park1.id)
 
 hike1_cover = open("https://all-treks-seeds.s3.amazonaws.com/IMG_1113.jpeg")
@@ -41,6 +43,7 @@ hike2 = Hike.create(name: "Cascade Pass and Sahale Arm Trail",
                     difficulty: "hard", 
                     distance: 11.6, 
                     route_type: "Out & back",
+
                     park_id: park1.id)
 
 hike2_cover = open("https://all-treks-seeds.s3.amazonaws.com/IMG_1037.jpeg")

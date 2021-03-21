@@ -7,6 +7,7 @@ class SessionForm extends React.Component {
         this.state = this.props.initialState;
     
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.demo = this.demo.bind(this)
     }
 
     update(field) {
@@ -19,6 +20,19 @@ class SessionForm extends React.Component {
         e.preventDefault();
         this.props.processForm(this.state);
     }
+
+    demo(e) {
+        e.preventDefault();
+
+        const demoUser = { email: "demo@alltreks.com", password: "password123" };
+
+        if (this.props.formType === "Sign up")
+            this.props.login(demoUser);
+        else (this.props.processForm(demoUser))
+          
+
+    }
+
 
     render() {
 
@@ -80,6 +94,7 @@ class SessionForm extends React.Component {
                         <button className="primary-button">{formType}</button>
                     </form>
                     <p>{otherFormText} {otherFormLink}</p>
+                    <p>Just exploring? Hit the trail as a <button className="inline-link" onClick={this.demo}>demo user</button></p>
                 </div>
             </div>
         )

@@ -53,13 +53,56 @@
     border-style: solid;
     width: 100%;
     max-width: 100%;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border: $contentBorder;
+
 
     li {
+        display: flex;
+        align-items: center;
+        justify-content: left;
         color: $darkGrey;
-        text-align: left;
+        align-items: center;
+        padding: 4px 0;
+        font-size: 16px;
+
+    }
+
+    svg {
+        color: white;
+        padding: 8px;
+        border-radius: 4px;
+        margin-right: 8px;
     }
 
     li:hover {
         background-color: $buttonGreen;
+        color: white;
+        
+
+        .result-hike-icon {
+            background-color: white;
+            color: $buttonGreen;
+        }
+
+        .result-park-icon {
+            background-color: white;
+            color: $orange;
+        }
     }
+
+    .result-park-icon {
+        background-color: $orange;
+        color: white
+    }
+
+    .result-hike-icon {
+        background-color: $buttonGreen;
+        color: white;
+    }
+
+
+
 }
+

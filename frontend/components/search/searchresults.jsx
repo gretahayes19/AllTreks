@@ -10,25 +10,28 @@ class SearchResults extends React.Component {
 
     render () {
 
+        const noResults = <li className="search-result-item">No Results Found</li>
 
+        const yesResults = this.props.results.map((result, idx) => (
+                <li className="search-result-item" key={idx}>
+                    {result.category === "Hike" ? (
+                    <Link to={`/hikes/${result.id}`} >
+                        <FontAwesomeIcon icon={faMapSigns} className="result-hike-icon"/>
+                            {result.name}
+                        </Link>
+                    ) : (
+                        <Link to={`/parks/${result.id}`}>
+                            <FontAwesomeIcon icon={faTree} className="result-park-icon"/>
+                            {result.name}
+                        </Link>
+                    )}
+                </li>
+            ))
+        
 
         return (
-            <ul>
-                {this.props.results.map((result, idx) => (
-                    <li className="search-result-item" key={idx}>
-                        {result.category === "Hike" ? (
-                            <Link to={`/hikes/${result.id}`}>
-                                <FontAwesomeIcon icon={faMapSigns} />
-                                {result.name}
-                            </Link>
-                        ) : (
-                            <Link to={`/parks/${result.id}`}>
-                                <FontAwesomeIcon icon={faTree} />
-                                {result.name}
-                            </Link>
-                        )}
-                    </li>
-                ))}
+            <ul className="search-results">
+                {(this.props.results.length) ? yesResults : noResults}
             </ul>
         )
     }

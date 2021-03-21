@@ -1,18 +1,23 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMountain, faHiking, faBars } from "@fortawesome/free-solid-svg-icons";
+import { faMountain, faHiking } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = ({ currentUser, logout }) => {
 
 
 
     const userNav = (currentUser ? (
-            <>      
-                <h1>{currentUser.firstname}</h1>
+            <>
+                <div className="dropdown-select">
+                    <div className="profile-pic" >
+                        < FontAwesomeIcon icon={faHiking} />
+                    </div>  
+                    <p>{currentUser.firstname}</p>
+                 </div>
                 <ul className="user-dropdown">
                     <li>
-                        <button className="login-button" onClick={logout}>Logout</button>
+                        <button onClick={logout}>Logout</button>
                     </li>
                 </ul>
             </>

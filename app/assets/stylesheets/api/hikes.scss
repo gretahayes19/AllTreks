@@ -32,3 +32,49 @@
     border-radius: 8px;
     margin-right: 24px;
 }
+
+.hike-index {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    img {
+        max-width: 200px;
+    }
+}
+
+
+.hike-item-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+
+     p {
+        font-family: $bodyFont;
+        line-height: 1.44;
+        color: $mediumGrey;
+        font-weight: 375;
+        font-size: 14px;
+        margin: 5px 0;
+     }
+
+     .hike-description {
+         margin-top: 24px;
+         font-size: 16px;
+     }
+
+     .hike-difficulty {
+        padding: 4px 12px;
+        color: white;
+        border-radius: 8px;
+        font-family: inherit;
+        font-size: 11px;
+    }
+
+    .moderate {
+        background-color: $buttonBlue;
+    }
+
+    .hard {
+        background-color: $tagGrey;
+    }
+}
