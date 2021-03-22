@@ -16,11 +16,14 @@
 .homepage-content {
     position: absolute;
     width: 70%;
-    top: 30%;
-    left: 50%;
-    margin-left: -35%;
-    display: flex;
-    flex-direction: column;
+    margin: auto;
+    top: 25%;
+    left: 15%;
+    // display:flex;
+    // flex-direction: column;
+    // align-items: center;
+    // // justify-content: space-around;
+
 
 }
 
@@ -51,4 +54,26 @@
     color: $grey;
     line-height: 2;
     font-family: $titleFont;
+}
+
+.sign-up-button-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 15px;
+    width: 160px;
+    height: 55px;
+    border-radius: 8px;
+    margin: 35px auto;
+    background-color: $buttonBlue;
+    border: 2px solid $buttonBlue;
+    color: white;
+    font-family: $headerFont;
+}
+
+.sign-up-button-home:hover {
+    background-color: $buttonBlueHover;
+    border: $buttonBlueHover;
 }

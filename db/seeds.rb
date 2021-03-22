@@ -48,3 +48,27 @@ hike2 = Hike.create(name: "Cascade Pass and Sahale Arm Trail",
 
 hike2_cover = open("https://all-treks-seeds.s3.amazonaws.com/IMG_1037.jpeg")
 hike2.coverPhoto.attach(io: hike2_cover, filename: "IMG_1037.jpeg")
+
+
+hike3 = Hike.create(name: "Cascade Pass Trail", 
+                    description: "Cascade Pass Trail is a 6.5 mile heavily trafficked out and back trail located near Rockport, Washington that features a great forest setting and is rated as moderate. The trail is primarily used for hiking and is best used from June until September.",
+                    difficulty: "moderate", 
+                    distance: 6.5, 
+                    route_type: "Out & back",
+
+                    park_id: park1.id)
+
+hike3_cover = open("https://all-treks-seeds.s3.amazonaws.com/IMG_1818.jpeg")
+hike3.coverPhoto.attach(io: hike3_cover, filename: "IMG_1818.jpeg")
+
+
+hike4 = Hike.create(name: "Sourdough Mountain Trail", 
+                    description: "Sourdough Mountain Trail is a 11.2 mile moderately trafficked out and back trail located near Marblemount, Washington that features a river and is rated as difficult. The trail is primarily used for hiking, nature trips, and bird watching and is best used from May until October.",
+                    difficulty: "hard", 
+                    distance: 11.2, 
+                    route_type: "Out & back",
+
+                    park_id: park1.id)
+
+hike4_cover = open("https://all-treks-seeds.s3.amazonaws.com/IMG_1655.jpeg")
+hike4.coverPhoto.attach(io: hike4_cover, filename: "IMG_1655.jpeg")

@@ -9,6 +9,7 @@
     padding: 0 15px;
     max-width: 1024px;
     margin: auto;
+    margin-top: 40px;
 }
 
 .header-text-park-info {
@@ -47,6 +48,8 @@
     padding-bottom: 24px;
 
 }
+
+///park cards
 
 .park-info {
     border-top: $contentBorder;
@@ -119,3 +122,53 @@
     }
 }
 
+//photo carousel
+
+.photo-carousel-wrapper {
+    margin-bottom: 25px;
+    position: relative;
+    height: 220px;
+}
+
+.photo-carousel {
+    display: flex;
+    overflow-x: scroll;
+}
+
+.carousel-item {
+    margin-right: 20px;
+    position: relative;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+    border-radius: 8px;
+    height: 220px;
+    width: 330px;
+
+}
+
+.photo-nav-button {
+    position: absolute;
+    top: 40%;
+    background-color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.23), 0 0 8px 0 rgba(0,0,0,.08);
+    background-position: 50%;
+    color: $lighterGrey;
+    font-weight: 300;
+    z-index: 99;
+}
+
+.right {
+    right: -1.5rem;
+}
+
+.left {
+    left: -1.5rem;
+}

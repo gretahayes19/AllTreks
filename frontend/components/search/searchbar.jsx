@@ -50,14 +50,9 @@ class SearchBar extends React.Component {
                         <button>Search</button>
                     </form>
                 </div> 
-                <div className="search-results-container">
-                    {(this.state.query !== "") ? (
-                        
-                        <SearchResults results={results} query={this.state.query}  fetchSearchResults={this.props.fetchSearchResults}/>
-                    
-                    ) : null}   
-                </div>
-
+                {(this.state.query !== "") ? (
+                    <SearchResults results={results} query={this.state.query}  fetchSearchResults={this.props.fetchSearchResults}/>
+                ) : null}  
             </>
 
         )

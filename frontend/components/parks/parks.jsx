@@ -2,18 +2,42 @@ import React from 'react'
 import ParkMap from '../maps/park_map'
 import HikeIndex from '../hikes/hike_index'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRoute, faAngleRight, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faRoute, faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 class ParkShow extends React.Component {
     constructor(props) {
         super(props)
         
+        this.state = {
+            imgIdx: 0,
+            currentOffset: 0
+        }
+
+        this.carouselNav = this.carouselNav.bind(this)
     }
     
 
     componentDidMount() {
         this.props.fetchPark(this.props.match.params.parkId)
         this.props.fetchParkHikes(this.props.match.params.parkId)
+    }
+
+    carouselNav(e) {
+        e.preventDefault();
+        const direction = parseInt(e.currentTarget.dataset.direction);
+        const newImgIdx = this.state.firstPosImgIdx += direction;
+
+        const newOffset = this.state.currentOffset += (direction * -350);
+        const carouselImgs = document.querySelectorAll(".carousel-item");
+        for (let i = 0; i < carouselImgs.length; i++) {
+            const img = carouselImgs[i];
+            img.style.transform = `translateX(${newOffset}px)`;
+        }
+
+        this.setState({
+            currentOffset: newOffset,
+            imgIdx: newImgIdx
+        })
     }
 
 
@@ -23,9 +47,41 @@ class ParkShow extends React.Component {
 
         const {park, hikes} = this.props 
 
+        const photoCarousel = hikes.map((hike, idx) => (
+            <img className="carousel-item" key={idx} src={hike.coverPhotoURL} alt={hike.name}/>
+        ))
+
+
+        const carouselButtons = (
+            <>
+                {/* {this.state.imgIdx > 0 ? ( */}
+                    <button
+                        className="photo-nav-button left"
+                        data-direction="-1"
+                        onClick={this.carouselNav}>                        
+                        <FontAwesomeIcon icon={faChevronLeft} />
+                    </button>
+                 {/* ) : null}  */}
+             {/* {this.state.imgIdx <= hikes.length - 3 ? (  */}
+                    <button
+                        className="photo-nav-button right"
+                        data-direction="1"
+                        onClick={this.carouselNav}>
+                    <FontAwesomeIcon icon={faChevronRight} />
+                    </button>
+                {/* // ) : null} */}
+            </>
+        )
+
         return(
             <>
                 <div className="park-content-wrap">
+                    <div className="photo-carousel-wrapper">
+                        <div className="photo-carousel">
+                            {photoCarousel}
+                        </div>
+                        {carouselButtons}
+                    </div>
                     <section className="park-description">
                         <h1 className="header-text1">Best trails in {park.name}</h1>
                         <p className="about">{park.about}</p>
