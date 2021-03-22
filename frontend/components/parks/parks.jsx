@@ -1,8 +1,10 @@
 import React from 'react'
 import ParkMap from '../maps/park_map'
 import HikeIndex from '../hikes/hike_index'
+import SubNavContainer from '../nav/subnav_container'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRoute, faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faRoute, faPrint, faShare, faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-router-dom';
 
 class ParkShow extends React.Component {
     constructor(props) {
@@ -24,13 +26,13 @@ class ParkShow extends React.Component {
 
     carouselNav(e) {
         e.preventDefault();
-        const direction = parseInt(e.currentTarget.dataset.direction);
-        const newImgIdx = this.state.firstPosImgIdx += direction;
+        const direction = parseInt(e.currentTarget.name);
+        const newImgIdx = this.state.imgIdx += direction;
 
-        const newOffset = this.state.currentOffset += (direction * -350);
-        const carouselImgs = document.querySelectorAll(".carousel-item");
-        for (let i = 0; i < carouselImgs.length; i++) {
-            const img = carouselImgs[i];
+        const newOffset = this.state.currentOffset += (direction * -313);
+        const imgs = document.querySelectorAll(".carousel-item");
+        for (let i = 0; i < imgs.length; i++) {
+            const img = imgs[i];
             img.style.transform = `translateX(${newOffset}px)`;
         }
 
@@ -54,29 +56,30 @@ class ParkShow extends React.Component {
 
         const carouselButtons = (
             <>
-                {/* {this.state.imgIdx > 0 ? ( */}
+           {this.state.imgIdx > 0 ? ( 
                     <button
                         className="photo-nav-button left"
-                        data-direction="-1"
+                        name="-1"
                         onClick={this.carouselNav}>                        
                         <FontAwesomeIcon icon={faChevronLeft} />
                     </button>
-                 {/* ) : null}  */}
-             {/* {this.state.imgIdx <= hikes.length - 3 ? (  */}
+                 ) : null} 
+            {this.state.imgIdx <= hikes.length - 4 ? ( 
                     <button
                         className="photo-nav-button right"
-                        data-direction="1"
+                        name="1"
                         onClick={this.carouselNav}>
                     <FontAwesomeIcon icon={faChevronRight} />
                     </button>
-                {/* // ) : null} */}
+               ) : null}
             </>
         )
 
         return(
             <>
+                <SubNavContainer />
                 <div className="park-content-wrap">
-                    <div className="photo-carousel-wrapper">
+                    <div className="carousel-wrap">
                         <div className="photo-carousel">
                             {photoCarousel}
                         </div>
@@ -96,7 +99,16 @@ class ParkShow extends React.Component {
                                 </a>
                             </div>
                             <div className="park-action">
-
+                                <Link to="#">
+                                    <FontAwesomeIcon icon={faPrint} />
+                                    <p>Print map</p>
+                                </Link>
+                            </div>
+                            <div className="park-action">
+                                <Link to="#">
+                                    <FontAwesomeIcon icon={faShare} />
+                                    <p>Share</p>
+                                </Link>
                             </div>
                         </div>
                     </section>

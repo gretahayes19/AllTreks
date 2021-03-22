@@ -10,10 +10,12 @@ class SearchResults extends React.Component {
 
     render () {
 
-        const noResults = <li className="search-result-item">No Results Found</li>
+        const parent = this.props.parent === "sub" ? "sub-" : "";
+
+        const noResults = <li className={`${parent}search-result-item`}>No Results Found</li>
 
         const yesResults = this.props.results.map((result, idx) => (
-                <li className="search-result-item" key={idx}>
+                <li className={`${parent}search-result-item`} key={idx}>
                     {result.category === "Hike" ? (
                     <Link to={`/hikes/${result.id}`} >
                         <div className="result-hike-icon"><FontAwesomeIcon icon={faMapSigns} /></div>
@@ -30,7 +32,7 @@ class SearchResults extends React.Component {
         
 
         return (
-            <ul className="search-results">
+            <ul className={`${parent}search-results`}>
                 {(this.props.results.length) ? yesResults : noResults}
             </ul>
         )

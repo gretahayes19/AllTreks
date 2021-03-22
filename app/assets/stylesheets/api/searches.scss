@@ -14,6 +14,7 @@
     z-index: 1;
 }
 
+
 .search-input {
     box-shadow: 0 0 0 15px rgba(255, 255, 255, .45);
     display: flex;
@@ -122,7 +123,147 @@
         color: white;
     }
 
+}
+
+
+//SubNav Search
+
+.sub-search-bar {
+    position: relative;
+    width: 326px;
+    font-weight: 400;
+
+}
+
+
+.sub-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    max-width: 1024px;
+    margin: auto;
+    // padding-left: 58%;
+}
+
+.breadcrumbs{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    color:$lighterGrey;
+    font-family: $headerFont, Arial,sans-serif;
+
+
+    p {
+        padding: 5px;
+        font-size: 12px;
+        line-height: normal;
+    }
+
+    svg {
+        padding: 5px;
+        font-size: 7px;
+    }
+}
+
+
+.sub-search-input {
+    display: flex;
+    border-radius: 8px;
+    flex-direction: row;
+    width: 326px;
+    font-family: $headerFont, Arial,sans-serif;
+    font-size: 13px;
+    border: 1px solid #e6e6e6;
+    color: #414141;
+    vertical-align: middle;
+    padding-left: 7px;
+
+    input {
+        width: 100%;
+        color: $darkGrey;
+        text-align: left;
+    }
+
+
+    .search-icon {
+        color: white;
+        background-color: $buttonGreen;
+        border: 1px solid $buttonGreen;
+        padding: 10px 10px;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        cursor: pointer;
+    }
 
 
 }
 
+
+.sub-search-results {
+    position: absolute;    
+    background-color: white;
+    width: 333px;
+    top: 113px;
+    z-index: 9999;
+    color: $darkGrey;
+    border: $contentBorder;
+    font-family: $headerFont, Arial,sans-serif;
+    font-size: 13px;
+
+
+    li {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        color: $darkGrey;
+        align-items: center;
+        padding: 3.5px 7px 3.5px 7px;
+        font-size: 13px;
+
+    }
+
+    a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+
+        div {
+            color: white;
+            width: 33px;
+            padding: 8px;
+            border-radius: 4px;
+            margin-right: 8px;
+
+        }
+
+    }
+
+    li:hover {
+        background-color: $buttonGreen;
+        color: white;
+        
+
+        .result-hike-icon {
+            background-color: white;
+            color: $buttonGreen;
+        }
+
+        .result-park-icon {
+            background-color: white;
+            color: $orange;
+        }
+    }
+
+    .result-park-icon {
+        background-color: $orange;
+        color: white
+    }
+
+    .result-hike-icon {
+        background-color: $buttonGreen;
+        color: white;
+    }
+}
