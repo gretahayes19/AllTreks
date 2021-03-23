@@ -164,6 +164,24 @@
 
     .hike-stat {
         padding-bottom: 6px;
+        flex: 1;
+
+        p {
+            font-family: $bodyFont;
+            line-height: 1.44;
+            color: $mediumGrey;
+            font-weight: 375;
+            font-size: 12px;
+        }
+
+        span {
+            font-family: $headerFont;
+            color: $darkGrey;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 1.38;
+        }
+        
     }
 }
 

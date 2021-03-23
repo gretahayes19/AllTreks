@@ -29,4 +29,6 @@
 
 app/assets/javascripts/bundle.js
 bundle.js.map
+bundle.worker.js
+bundle.worker.js.map
 node_modules/

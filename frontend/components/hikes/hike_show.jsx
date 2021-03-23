@@ -61,15 +61,15 @@ class HikeShow extends React.Component {
                         <div className="hike-left-2">
                             <div className="hike-stat">
                                 <p>Length</p>
-                                <span>{thisHike.distance} mi</span>
+                                <span className="header-text-3">{thisHike.distance} mi</span>
                             </div>
                             <div className="hike-stat">
-                                <p>Elevation</p>
-                                <span>{thisHike.elevation} ft</span>
+                                <p>Elevation gain</p>
+                                <span className="header-text-3">{thisHike.elevation} ft</span>
                             </div>
                             <div className="hike-stat">
                                 <p>Route type</p>
-                                <span>{thisHike.route_type}</span>
+                                <span className="header-text-3">{thisHike.route_type}</span>
                             </div>
                         </div>
                         <div className="hike-left-3">
