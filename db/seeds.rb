@@ -38,7 +38,7 @@ hike1 = Hike.create(name: "Blue Lake Trail",
                     elevation: 921,
                     park_id: park1.id)
 
-hike1_cover = open("https://all-treks-seeds.s3.amazonaws.com/IMG_1113.jpeg")
+hike1_cover = URI.open("https://all-treks-seeds.s3.amazonaws.com/IMG_1113.jpeg")
 hike1.coverPhoto.attach(io: hike1_cover, filename: "IMG_1113.jpeg")
 
 hike2 = Hike.create(name: "Cascade Pass and Sahale Arm Trail", 
@@ -52,7 +52,7 @@ hike2 = Hike.create(name: "Cascade Pass and Sahale Arm Trail",
                     elevation: 4083,
                     park_id: park1.id)
 
-hike2_cover = open("https://all-treks-seeds.s3.amazonaws.com/IMG_1037.jpeg")
+hike2_cover =  URI.open("https://all-treks-seeds.s3.amazonaws.com/IMG_1037.jpeg")
 hike2.coverPhoto.attach(io: hike2_cover, filename: "IMG_1037.jpeg")
 
 
@@ -67,7 +67,7 @@ hike3 = Hike.create(name: "Cascade Pass Trail",
                     elevation: 1781,
                     park_id: park1.id)
 
-hike3_cover = open("https://all-treks-seeds.s3.amazonaws.com/IMG_1818.jpeg")
+hike3_cover =  URI.open("https://all-treks-seeds.s3.amazonaws.com/IMG_1818.jpeg")
 hike3.coverPhoto.attach(io: hike3_cover, filename: "IMG_1818.jpeg")
 
 
@@ -82,7 +82,7 @@ hike4 = Hike.create(name: "Sourdough Mountain Trail",
                     elevation: 5985,
                     park_id: park1.id)
 
-hike4_cover = open("https://all-treks-seeds.s3.amazonaws.com/IMG_1655.jpeg")
+hike4_cover =  URI.open("https://all-treks-seeds.s3.amazonaws.com/IMG_1655.jpeg")
 hike4.coverPhoto.attach(io: hike4_cover, filename: "IMG_1655.jpeg")
 
 
