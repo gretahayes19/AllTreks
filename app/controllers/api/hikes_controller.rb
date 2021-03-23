@@ -10,7 +10,7 @@ class Api::HikesController < ApplicationController
     end
 
     def show
-        @hike = Hike.includes(:reviews, :park, coverPhoto_attachment: :blob).find_by(id: params[:id]);
+        @hike = Hike.includes(:reviews, :reviewers, :park, coverPhoto_attachment: :blob).find_by(id: params[:id]);
         @nearby_hikes = Hike
                         .where(park_id: @hike.park_id)  
                         .includes(coverPhoto_attachment: :blob)

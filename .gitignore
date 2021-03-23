@@ -34,3 +34,4 @@ bundle.worker.js.map
 node_modules/
 yarn.lock
 package-lock.json
+Gemfile.lock 

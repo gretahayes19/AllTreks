@@ -6,7 +6,9 @@
         json.parkName @hike.park.name
         json.reviews do
             json.array! @hike.reviews do |review| 
-                json.extract! review, :id, :review_text, :rating, :activity_date, :hike_id
+                json.extract! review, :id, :review_text, :rating, :activity_date, :hike_id, :user_id
+                json.reviewerFirst review.reviewer.firstname
+                json.reviewerLast review.reviewer.lastname
             end
         end
     end
@@ -17,4 +19,7 @@
                 json.coverPhotoURL url_for(hike.coverPhoto)
         end
     end
+
+
+
 

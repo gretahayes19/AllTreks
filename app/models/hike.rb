@@ -8,5 +8,10 @@ class Hike < ApplicationRecord
 
     has_many :reviews
 
+    has_many :reviewers,
+        through: :reviews, 
+        source: :reviewer
+
+
     belongs_to :park
 end

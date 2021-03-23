@@ -1,5 +1,6 @@
 import React from 'react'
 import ParkMap from '../maps/park_map'
+import ReviewIndex from '../reviews/reviews_index'
 import NearbyHikeIndex from '../hikes/neaby_hike_index'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,7 +22,7 @@ class HikeShow extends React.Component {
         
         const thisHike = hike.thisHike;
         const nearbyHikes = hike.nearbyHikes;
-        const reviews = thisHike.reviews
+        const reviews = thisHike.reviews;
 
         return (
             <div className="hike-page-background"> 
@@ -85,7 +86,7 @@ class HikeShow extends React.Component {
                             </div>
                         </div>
                         <div className="hike-left-4">
-
+                            <ReviewIndex reviews={reviews}/>
                         </div>
                     </div>
                     <div className="hike-right">
