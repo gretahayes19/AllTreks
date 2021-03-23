@@ -156,7 +156,6 @@
 
 .hike-left-1 {
     background-color: white;
-    height: 20%;
     font-family: $bodyFont;
     font-size: 18px;
     line-height: 1.44;
@@ -176,6 +175,7 @@
     flex-direction: row;
     text-align: left;
     justify-content: space-around;
+    padding-bottom: 10px;
 
     .hike-stat {
         padding-bottom: 6px;
@@ -202,7 +202,7 @@
 
 .hike-left-3 {
     background-color: white;
-    height: 25%;
+    // height: 15%;
     font-family: $bodyFont;
     font-size: 18px;
     line-height: 1.44;
@@ -327,5 +327,46 @@
 }
 
 
+.review-header {
+    display: flex;
+    flex-direction: row;
+    flex: 1
+}
 
+.review-item {
+    border-bottom: $contentBorder;
+    padding: 20px 0;
+    margin: 0 24px;
+    font-family: $bodyFont;
+    font-size: 16px;
+    line-height: 1.44;
+    color: $mediumGrey;
+    font-weight: 375;
 
+    p {
+        font-family: $bodyFont;
+    }
+}
+
+.write-review-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 15px;
+    width: 188px;
+    height: 40px;
+    border-radius: 8px;
+    margin: 35px auto;
+    background-color: $buttonGreen;
+    border: 2px solid $buttonGreen;
+    color: white;
+    font-family: $headerFont;
+}
+
+.write-review-button:hover{
+    background-color: $buttonHoverGreen;
+    border: 2px solid $buttonHoverGreen;
+    cursor: pointer;
+}

@@ -7,6 +7,7 @@ const mSTP = (state, ownProps) => {
 
     return {
         hike: state.entities.hikes[ownProps.match.params.hikeId],
+        currentUser: state.entities.users[state.session.currentUserId]
     }
 
 }

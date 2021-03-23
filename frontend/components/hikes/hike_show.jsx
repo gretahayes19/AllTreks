@@ -18,11 +18,19 @@ class HikeShow extends React.Component {
     render () {
         if (!this.props.hike) return null;
 
-        const {hike} = this.props
+        const {hike, currentUser} = this.props
         
         const thisHike = hike.thisHike;
         const nearbyHikes = hike.nearbyHikes;
         const reviews = thisHike.reviews;
+
+ 
+
+        const reviewForm = (currentUser ? (
+
+            <span className="write-review-button">Write review</span>
+
+         ) : null)
 
         return (
             <div className="hike-page-background"> 
@@ -85,6 +93,10 @@ class HikeShow extends React.Component {
                                 <p>{thisHike.summary}</p>
                             </div>
                         </div>
+                        <div className="hike-tab">
+                            <p>{`Reviews (${reviews.length})`}</p>
+                        </div>
+                        {reviewForm}
                         <div className="hike-left-4">
                             <ReviewIndex reviews={reviews}/>
                         </div>
