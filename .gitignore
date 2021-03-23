@@ -32,3 +32,4 @@ bundle.js.map
 bundle.worker.js
 bundle.worker.js.map
 node_modules/
+yarn.lock
