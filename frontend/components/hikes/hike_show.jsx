@@ -16,23 +16,25 @@ class HikeShow extends React.Component {
         if (!this.props.hike) return null;
 
         const {hike} = this.props
+        
+        const thisHike = hike.thisHike;
 
         return (
             <div className="hike-page-background"> 
-                <SubNavContainer parkName={hike.thisHike.parkName}/>
+                <SubNavContainer parkName={thisHike.parkName}/>
                 <div className="title-box">
                     <div className="title-photo-box">
                         <img src={hike.thisHike.coverPhotoURL} alt="hike"/>
 
                     </div>
                     <div className="hike-title-content">
-                        <h1 className="header-text1">{hike.thisHike.name}</h1>
-                        <span className={`hike-difficulty ${hike.thisHike.difficulty}`}>{hike.thisHike.difficulty}</span>
+                        <h1 className="header-text1">{thisHike.name}</h1>
+                        <span className={`hike-difficulty ${thisHike.difficulty}`}>{thisHike.difficulty}</span>
                         <p>{hike.thisHike.parkName}</p>
                     </div>
                     <div className="hike-actions-wrap">
                             <div className="hike-action">
-                                <a href={`https://www.google.com/maps/dir/Current+Location/${hike.thisHike.lat},${hike.thisHike.lng}`} >
+                                <a href={`https://www.google.com/maps/dir/Current+Location/${thisHike.lat},${thisHike.lng}`} >
                                     <FontAwesomeIcon icon={faRoute} />
                                     <p>Directions</p>
                                 </a>
@@ -54,10 +56,21 @@ class HikeShow extends React.Component {
                 <div className="hike-info">
                     <div className="hike-left">
                         <div className="hike-left-1">
-                            <p>This is a great hike!</p>
+                            <p>{thisHike.summary}</p>
                         </div>
                         <div className="hike-left-2">
-
+                            <div className="hike-stat">
+                                <p>Length</p>
+                                <span>{thisHike.distance} mi</span>
+                            </div>
+                            <div className="hike-stat">
+                                <p>Elevation</p>
+                                <span>{thisHike.elevation} ft</span>
+                            </div>
+                            <div className="hike-stat">
+                                <p>Route type</p>
+                                <span>{thisHike.route_type}</span>
+                            </div>
                         </div>
                         <div className="hike-left-3">
 

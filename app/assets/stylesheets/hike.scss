@@ -135,16 +135,35 @@
 }
 
 .hike-left {
-    background-color: blue;
+    background-color: white;
 }
 
 .hike-left-1 {
-    background-color: green;
+    background-color: white;
     height: 25%;
+    font-family: $bodyFont;
+    font-size: 18px;
+    line-height: 1.44;
+    color: $mediumGrey;
+    font-weight: 375;
+    padding: 20px;
+    border-bottom: $contentBorder;
+    margin: 0 24px;
+
 }
 
 .hike-left-2 {
-    background-color: purple;
-    height: 25%;
+    background-color: white;
+    margin: 0 24px;
+    padding-top: 24px;
+    border-bottom: $contentBorder;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-around;
+
+    .hike-stat {
+        padding-bottom: 6px;
+    }
 }
 
