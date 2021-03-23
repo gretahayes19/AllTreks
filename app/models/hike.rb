@@ -6,5 +6,7 @@ class Hike < ApplicationRecord
     
     has_one_attached :coverPhoto
 
+    has_many :reviews
+
     belongs_to :park
 end

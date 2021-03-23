@@ -84,3 +84,11 @@ hike4 = Hike.create(name: "Sourdough Mountain Trail",
 
 hike4_cover = open("https://all-treks-seeds.s3.amazonaws.com/IMG_1655.jpeg")
 hike4.coverPhoto.attach(io: hike4_cover, filename: "IMG_1655.jpeg")
+
+
+Review.destroy_all
+ApplicationRecord.connection.reset_pk_sequence!('reviews')
+review1 = Review.create(rating: 4, review_text: "Ok Hike!", activity_date: "2021-02-23", user_id: user1.id, hike_id: hike4.id)
+review2 = Review.create(rating: 5, review_text: "Great Hike!", activity_date: "2021-02-23", user_id: user2.id, hike_id: hike4.id)
+review3 = Review.create(rating: 5, review_text: "Great Hike!", activity_date: "2021-02-23", user_id: user3.id, hike_id: hike4.id)
+review4 = Review.create(rating: 2, review_text: "Bad Hike!", activity_date: "2021-02-23", user_id: user4.id, hike_id: hike4.id)

@@ -90,7 +90,7 @@ class ParkShow extends React.Component {
                         <p className="about">{park.about}</p>
                         <h2 className="header-text2">Description</h2>
                         <p className="description">{park.description}</p>
-                        <ParkMap park={park}/>
+                        <ParkMap parent="park" location={park}/>
                         <div className="park-actions">
                             <div className="park-action">
                                 <a href={`https://www.google.com/maps/dir/Current+Location/${park.lat},${park.lng}`} >
@@ -127,7 +127,7 @@ class ParkShow extends React.Component {
                     </section>
                     <section className="hike-index-container">
                         <h2 className="header-text-park-info">Top Trails ({hikes.length})</h2>
-                        <HikeIndex hikes={hikes} park={park}/>
+                        <HikeIndex hikes={hikes} park={park.name}/>
                     </section>
 
                 </div>

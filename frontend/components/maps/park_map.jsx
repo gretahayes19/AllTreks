@@ -10,10 +10,11 @@ class ParkMap extends React.Component {
 
     constructor(props) {
         super(props);
+        let zoom = (this.props.parent === "park") ? 7.65 : 8
         this.state = {
-            lng: this.props.park.lng,
-            lat: this.props.park.lat,
-            zoom: 7.65
+            lng: this.props.location.lng,
+            lat: this.props.location.lat,
+            zoom: zoom
         };
         this.mapContainer = React.createRef();
     }
@@ -39,13 +40,14 @@ class ParkMap extends React.Component {
 
     render () {
 
+        let thisClass = (this.props.parent === "park") ? "park-map-container" : "hike-map-container";
+        
         return (
-            <div>
-
-                <div ref={this.mapContainer} className="map-container">
+            <>
+                <div ref={this.mapContainer} className={thisClass}>
 
                 </div>
-            </div >
+            </>
         )
     }
 }

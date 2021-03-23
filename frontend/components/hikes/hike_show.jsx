@@ -1,4 +1,6 @@
 import React from 'react'
+import ParkMap from '../maps/park_map'
+import NearbyHikeIndex from '../hikes/neaby_hike_index'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SubNavContainer from '../nav/subnav_container'
@@ -18,6 +20,8 @@ class HikeShow extends React.Component {
         const {hike} = this.props
         
         const thisHike = hike.thisHike;
+        const nearbyHikes = hike.nearbyHikes;
+        const reviews = thisHike.reviews
 
         return (
             <div className="hike-page-background"> 
@@ -72,15 +76,26 @@ class HikeShow extends React.Component {
                                 <span className="header-text-3">{thisHike.route_type}</span>
                             </div>
                         </div>
+                        <div className="hike-tab">
+                            <p>Description</p>
+                        </div>
                         <div className="hike-left-3">
-
+                            <div>
+                                <p>{thisHike.summary}</p>
+                            </div>
                         </div>
                         <div className="hike-left-4">
 
                         </div>
                     </div>
                     <div className="hike-right">
-
+                        <div className="hike-map">
+                            <ParkMap parent="hike" location={thisHike} />
+                        </div>
+                        <div className="nearby-hikes-wrapper">
+                            <h3 className="nearby-trails header-text3">Nearby Trails</h3>
+                            <NearbyHikeIndex hikes={nearbyHikes} park={thisHike.parkName}/>
+                        </div>
                     </div>
                 </div>
             </div>
