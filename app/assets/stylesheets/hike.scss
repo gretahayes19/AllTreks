@@ -1,0 +1,150 @@
+@import './variables.scss';
+
+
+.title-box {
+    position: relative;
+    width: 1024px;
+    margin: auto;
+
+    .hike-title-content {
+        position: absolute;
+        color: white;
+        top: 150px;
+        left: 24px;
+        margin: auto;
+
+
+        .hike-difficulty {
+            padding: 4px 12px;
+            color: white;
+            border-radius: 8px;
+            font-family: $bodyFont;
+            font-size: 11px;
+        }
+
+        .moderate {
+            background-color: $buttonBlue;
+        }
+
+        .hard {
+            background-color: $tagGrey;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        p {
+            font-family: $bodyFont;
+            font-weight: 300;
+            font-size: 14px;
+            padding: 8px 0;
+            margin-top: 4px;
+        }
+    }
+
+    
+}
+
+
+
+
+.title-photo-box {
+    width: 1024px;
+    height: 312px;
+    overflow: hidden;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+    img {
+        width: 1024px;
+
+    }
+}
+
+.hike-page-background {
+    background-color: #F2F2F2;
+    height: 100%;
+    width: 100%;
+    z-index: -99;
+}
+
+.hike-actions-wrap{
+    background: #428a13;
+    height: 55px;
+    width: 1024px;
+    margin: auto;
+    margin-bottom: 0;
+    border-top: none;
+    display: flex;
+    justify-content: space-around;
+
+    .hike-action {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $buttonGreen;
+
+        p {
+            color: white;
+            margin-top: 8px;
+            font-family: $bodyFont;
+        }
+
+        a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            background: inherit;
+            border: none;
+            outline: none;
+            margin-top: -22px;
+        }
+
+        svg {
+            font-size: 16px;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,.24), 0 0 8px 0 rgba(0,0,0,.08);
+            background-color: white;
+        }
+    }   
+
+
+}
+
+.hike-info{
+    position: relative;
+    width: 1024px;
+    height: 700px;
+    border: $contentBorder;
+    background-color: white;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 66% auto;
+}
+
+.hike-right {
+    background-color: red;
+    display: grid;
+    grid-template-rows: 25%;
+}
+
+.hike-left {
+    background-color: blue;
+}
+
+.hike-left-1 {
+    background-color: green;
+    height: 25%;
+}
+
+.hike-left-2 {
+    background-color: purple;
+    height: 25%;
+}
+

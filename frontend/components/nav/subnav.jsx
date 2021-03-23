@@ -39,7 +39,7 @@ class SubNav extends React.Component {
 
     render() {
 
-        const { results } = this.props
+        const { results, parkName } = this.props
 
         return (
             <>
@@ -49,7 +49,7 @@ class SubNav extends React.Component {
                     <FontAwesomeIcon icon={faChevronRight} />
                     <p>Washington</p> 
                     <FontAwesomeIcon icon={faChevronRight} />
-                    <p>North Cascades National Park</p>
+                    <p>{parkName}</p>
                 </div>
                 <div className="-sub-search-bar" onFocus={this.handleFocus} onBlur={this.handleBlur}>
                     <form onSubmit={this.handleSubmit} className="sub-search-input">

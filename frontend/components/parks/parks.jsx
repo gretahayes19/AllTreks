@@ -77,7 +77,7 @@ class ParkShow extends React.Component {
 
         return(
             <>
-                <SubNavContainer />
+                <SubNavContainer parkName={park.name}/>
                 <div className="park-content-wrap">
                     <div className="carousel-wrap">
                         <div className="photo-carousel">
