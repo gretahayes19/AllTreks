@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import SearchResults from '../search/searchresults';
+import { Link } from "react-router-dom";
 
 class SubNav extends React.Component {
     constructor(props) {
@@ -39,7 +40,7 @@ class SubNav extends React.Component {
 
     render() {
 
-        const { results, parkName } = this.props
+        const { results, parkName, parkId } = this.props
 
         return (
             <>
@@ -49,7 +50,7 @@ class SubNav extends React.Component {
                     <FontAwesomeIcon icon={faChevronRight} />
                     <p>Washington</p> 
                     <FontAwesomeIcon icon={faChevronRight} />
-                    <p>{parkName}</p>
+                        <p><Link to={`/parks/${parkId}`}>{parkName}</Link></p>
                 </div>
                 <div className="-sub-search-bar" onFocus={this.handleFocus} onBlur={this.handleBlur}>
                     <form onSubmit={this.handleSubmit} className="sub-search-input">

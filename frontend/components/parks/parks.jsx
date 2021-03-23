@@ -77,7 +77,7 @@ class ParkShow extends React.Component {
 
         return(
             <>
-                <SubNavContainer parkName={park.name}/>
+                <SubNavContainer parkId={park.id} parkName={park.name}/>
                 <div className="park-content-wrap">
                     <div className="carousel-wrap">
                         <div className="photo-carousel">
@@ -99,10 +99,10 @@ class ParkShow extends React.Component {
                                 </a>
                             </div>
                             <div className="park-action">
-                                <Link to="#">
+                                <a href="javascript:window.print();">
                                     <FontAwesomeIcon icon={faPrint} />
                                     <p>Print map</p>
-                                </Link>
+                                </a>
                             </div>
                             <div className="park-action">
                                 <Link to="#">

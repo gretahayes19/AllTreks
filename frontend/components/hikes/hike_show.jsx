@@ -34,7 +34,7 @@ class HikeShow extends React.Component {
 
         return (
             <div className="hike-page-background"> 
-                <SubNavContainer parkName={thisHike.parkName}/>
+                <SubNavContainer parkId={thisHike.park_id} parkName={thisHike.parkName}/>
                 <div className="title-box">
                     <div className="title-photo-box">
                         <img src={hike.thisHike.coverPhotoURL} alt="hike"/>
@@ -53,10 +53,10 @@ class HikeShow extends React.Component {
                                 </a>
                             </div>
                             <div className="hike-action">
-                                <Link to="#">
+                            <a href="javascript:window.print();">
                                     <FontAwesomeIcon icon={faPrint} />
                                     <p>Print map</p>
-                                </Link>
+                                </a>
                             </div>
                             <div className="hike-action">
                                 <Link to="#">
