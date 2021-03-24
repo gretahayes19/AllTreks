@@ -10,12 +10,16 @@ import { faRoute, faPrint, faShare, faChevronRight, faChevronLeft } from "@forta
 
 class HikeShow extends React.Component {
 
+    constructor(props) {
+        super(props)
+    }
 
     componentDidMount() {
         this.props.fetchHike(this.props.match.params.hikeId);
     }
 
     render () {
+        debugger
         if (!this.props.hike) return null;
 
         const {hike, currentUser} = this.props

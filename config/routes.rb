@@ -15,6 +15,10 @@ Rails.application.routes.draw do
 
       resources :searches, only: :index
       resource :session, only: [:create, :destroy]
+
+      resources :reviews, only: [:index, :create, :update, :destroy]
+
+
     end
 
 end
