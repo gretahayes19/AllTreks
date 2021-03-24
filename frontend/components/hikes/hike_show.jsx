@@ -15,12 +15,23 @@ class HikeShow extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchHike(this.props.match.params.hikeId);
+        debugger
+        this.props.fetchHike(this.props.match.params.hikeId).then(res => {
+            debugger
+        });
+    }
+
+    componentDidUpdate() {
+        debugger
+        this.props.fetchHike(this.props.match.params.hikeId).then(res => {
+            debugger
+        });
     }
 
     render () {
         debugger
-        if (!this.props.hike) return null;
+        if (!this.props.hike || !this.props.hike.thisHike) return null;
+
 
         const {hike, currentUser} = this.props
         
