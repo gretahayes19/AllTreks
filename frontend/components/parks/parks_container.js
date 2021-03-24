@@ -12,7 +12,6 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = (dispatch) => {
-    // debugger
     return {
     
         fetchPark: parkId => dispatch(fetchPark(parkId)),

@@ -55,11 +55,15 @@
         font-weight: 375;
         font-size: 14px;
         margin: 5px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
      }
 
      .hike-description {
          margin-top: 24px;
          font-size: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
      }
 
      .hike-difficulty {
@@ -68,6 +72,8 @@
         border-radius: 8px;
         font-family: inherit;
         font-size: 11px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .moderate {
