@@ -21,7 +21,7 @@ class ParkMap extends React.Component {
 
     componentDidMount() {
         const { lng, lat, zoom } = this.state;
-        const map = new mapboxgl.Map({
+        this.map = new mapboxgl.Map({
             container: this.mapContainer.current,
             style: 'mapbox://styles/mapbox/outdoors-v11',
             center: [lng, lat],
@@ -29,11 +29,22 @@ class ParkMap extends React.Component {
         });
 
 
-        map.on('move', () => {
+        // // add markers to map
+            // create a HTML element for each feature
+            var el = document.createElement('div');
+            el.className = 'marker';
+
+            // make a marker for each feature and add to the map
+            new mapboxgl.Marker(el)
+                .setLngLat([lng, lat])
+                .addTo(this.map);
+        // });
+
+        this.map.on('move', () => {
             this.setState({
-                lng: map.getCenter().lng.toFixed(4),
-                lat: map.getCenter().lat.toFixed(4),
-                zoom: map.getZoom().toFixed(2)
+                lng: this.map.getCenter().lng.toFixed(4),
+                lat: this.map.getCenter().lat.toFixed(4),
+                zoom: this.map.getZoom().toFixed(2)
             });
         });
     }

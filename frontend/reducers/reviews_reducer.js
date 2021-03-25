@@ -1,9 +1,9 @@
 import { RECEIVE_REVIEW, RECEIVE_REVIEWS, REMOVE_REVIEW } from '../actions/review_actions'
 
 
-const reviewsReducer = (state = {}, action) => {
+const reviewsReducer = (state = [], action) => {
     Object.freeze(state);
-    let newState = Object.assign({}, state);
+    let newState = Object.assign([], state);
     switch (action.type) {
         case REMOVE_REVIEW:
             delete newState[action.reviewId];
