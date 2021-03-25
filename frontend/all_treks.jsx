@@ -6,7 +6,7 @@ import { receivePark, fetchPark, fetchParkHikes} from './actions/park_actions'
 import * as ParkAPIUtil from './util/park_api_util'
 import { fetchSearchResults } from './actions/search_actions'
 import {fetchHike} from './actions/hike_actions'
-import {createReview} from './actions/review_actions'
+import {createReview, fetchReviews} from './actions/review_actions'
 
 document.addEventListener("DOMContentLoaded", () => {
     let root = document.getElementById("root");
@@ -33,8 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
     window.fetchSearchResults = fetchSearchResults;
     window.fetchHike = fetchHike;
     window.createReview = createReview
+    window.fetchReviews = fetchReviews
 
     window.fetchParkAPI = ParkAPIUtil.fetchPark
     ReactDOM.render(<Root store={store}/>, root)
 })
+
+
 

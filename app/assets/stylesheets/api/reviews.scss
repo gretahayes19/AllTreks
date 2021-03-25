@@ -1,3 +1,49 @@
 // Place all the styles related to the api/reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import './variables.scss';
+
+
+.rating-select {
+    display: flex;
+    flex-direction: row;
+    
+    .review-star {
+        font-size: 16px;
+        color: gold;
+    }
+}
+
+.review-form {
+    width: 75%;
+    margin: auto;
+
+    p {
+        font-family: $headerFont;
+        color: $darkGrey;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 1.38;
+        padding: 20px 0;
+    }
+
+    textarea {
+        height: 200px;
+        padding: 8px;
+        font-family: $bodyFont;
+        color: $grey;
+        font-size: 14px;
+        line-height: 1.38;
+    }
+
+    [type="date"] {
+        width: 35%;
+        height: 50px;
+        font-family: $bodyFont;
+        padding: 8px;
+        color: $grey;
+        font-size: 14px;
+        line-height: 1.38;
+    }
+}
+

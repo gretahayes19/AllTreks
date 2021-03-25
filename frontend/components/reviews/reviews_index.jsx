@@ -11,7 +11,7 @@ const ReviewIndex = ({ reviews }) => {
                         <div className="profile-pic" >
                             < FontAwesomeIcon icon={faHiking} />
                         </div>
-                        {review.reviewerFirst} {review.reviewerLast}
+                        {review.reviewer.firstname} {review.reviewer.lastname}
                     </div>
                     <p>{review.review_text}</p>
                     

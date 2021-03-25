@@ -2,6 +2,7 @@ import React from 'react'
 import ParkMap from '../maps/park_map'
 import ReviewIndex from '../reviews/reviews_index'
 import NearbyHikeIndex from '../hikes/neaby_hike_index'
+import ReviewFormContainer from '../reviews/review_form_container'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SubNavContainer from '../nav/subnav_container'
@@ -15,7 +16,7 @@ class HikeShow extends React.Component {
     }
 
     componentDidMount() {
-        
+        this.props.fetchReviews();
         this.props.fetchHike(this.props.match.params.hikeId);
     }
 
@@ -28,18 +29,19 @@ class HikeShow extends React.Component {
         if (!this.props.hike || !this.props.hike.thisHike) return null;
 
 
-        const {hike, currentUser} = this.props
+        const {hike, currentUser, reviews} = this.props
         
         const thisHike = hike.thisHike;
         const nearbyHikes = hike.nearbyHikes;
-        const reviews = thisHike.reviews;
+        // const reviews = thisHike.reviews;
 
  
 
         const reviewForm = (currentUser ? (
-
+            <div>
             <span className="write-review-button">Write review</span>
-
+            <ReviewFormContainer hikeId={thisHike.id} />
+            </div>
          ) : null)
 
         return (

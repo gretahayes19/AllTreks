@@ -92,3 +92,6 @@ review1 = Review.create(rating: 4, review_text: "Ok Hike!", activity_date: "2021
 review2 = Review.create(rating: 5, review_text: "Great Hike!", activity_date: "2021-02-23", user_id: user2.id, hike_id: hike4.id)
 review3 = Review.create(rating: 5, review_text: "Great Hike!", activity_date: "2021-02-23", user_id: user3.id, hike_id: hike4.id)
 review4 = Review.create(rating: 2, review_text: "Bad Hike!", activity_date: "2021-02-23", user_id: user4.id, hike_id: hike4.id)
+
+
+{rating: 5, review_text: "Great Hike whooohooo!", activity_date: "2021-02-23", user_id: 2, hike_id: 3}

@@ -131,8 +131,8 @@
     grid-template-rows: 25%;
     width: 100%;
     margin: auto;
+    margin-top: 5px;
     padding: 3px 0;
-    border-left: $contentBorder;
 
     .hike-map{
         width: inherit;
@@ -152,6 +152,8 @@
 
 .hike-left {
     background-color: white;
+    border-right: $contentBorder;
+
 }
 
 .hike-left-1 {
