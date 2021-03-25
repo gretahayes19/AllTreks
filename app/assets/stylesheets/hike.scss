@@ -30,6 +30,10 @@
             background-color: $tagGrey;
         }
 
+        .easy {
+            background-color: $buttonGreen;
+        }
+
         h1 {
             color: white;
         }
@@ -326,6 +330,10 @@
     .hard {
         background-color: $tagGrey;
     }
+
+    .easy {
+        background-color: $buttonGreen;
+    }
 }
 
 
@@ -371,4 +379,9 @@
     background-color: $buttonHoverGreen;
     border: 2px solid $buttonHoverGreen;
     cursor: pointer;
+}
+
+.hike-left-4{
+    overflow-y: auto;
+    height: 800px;
 }

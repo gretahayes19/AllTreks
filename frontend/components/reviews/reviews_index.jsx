@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMountain, faHiking } from "@fortawesome/free-solid-svg-icons";
 
 const ReviewIndex = ({ reviews }) => {
-    debugger
+
+
     return (
         <ul className="review-index">
             {reviews.map((review, idx) => (

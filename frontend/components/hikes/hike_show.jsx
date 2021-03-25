@@ -13,6 +13,11 @@ class HikeShow extends React.Component {
 
     constructor(props) {
         super(props)
+
+        this.state = {
+            reviewForm: false,
+        }
+        this.showReviewForm = this.showReviewForm.bind(this)
     }
 
     componentDidMount() {
@@ -24,6 +29,14 @@ class HikeShow extends React.Component {
         if (!this.props.hike) this.props.fetchHike(this.props.match.params.hikeId);
     }
 
+    // componentDidUnmount() {
+    //     this.props.clearHikes();
+    // }
+    
+    showReviewForm() {
+        this.setState({reviewForm: !this.state.reviewForm})
+    }
+
     render () {
         
         if (!this.props.hike || !this.props.hike.thisHike) return null;
@@ -33,14 +46,13 @@ class HikeShow extends React.Component {
         
         const thisHike = hike.thisHike;
         const nearbyHikes = hike.nearbyHikes;
-        // const reviews = thisHike.reviews;
+        const sortedReviews = reviews.slice().filter(review => review.hike_id === thisHike.id).reverse()
+        const numReviews = sortedReviews.length
 
- 
-
-        const reviewForm = (currentUser ? (
+        const writeReview = (currentUser ? (
             <div>
-            <span className="write-review-button">Write review</span>
-            <ReviewFormContainer hikeId={thisHike.id} />
+            <span className="write-review-button" onClick={this.showReviewForm}>Write review</span>
+                {this.state.reviewForm ? (<ReviewFormContainer hikeId={thisHike.id} />) : null }
             </div>
          ) : null)
 
@@ -106,11 +118,11 @@ class HikeShow extends React.Component {
                             </div>
                         </div>
                         <div className="hike-tab">
-                            <p>{`Reviews (${reviews.length})`}</p>
+                            <p>{`Reviews (${numReviews})`}</p>
                         </div>
-                        {reviewForm}
+                        {writeReview}
                         <div className="hike-left-4">
-                            <ReviewIndex reviews={reviews}/>
+                            <ReviewIndex reviews={sortedReviews}/>
                         </div>
                     </div>
                     <div className="hike-right">

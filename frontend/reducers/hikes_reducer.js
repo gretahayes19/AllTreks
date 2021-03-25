@@ -1,5 +1,5 @@
 import { RECEIVE_PARK_HIKES } from '../actions/park_actions'
-import { RECEIVE_HIKE } from '../actions/hike_actions'
+import { RECEIVE_HIKE, CLEAR_HIKES } from '../actions/hike_actions'
 
 const hikesReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -13,6 +13,8 @@ const hikesReducer = (state = {}, action) => {
         case RECEIVE_HIKE:
             newState[action.hike.thisHike.id] = action.hike
             return newState
+        // case CLEAR_HIKES:
+        //     return {};
         default:
             return state;
     }

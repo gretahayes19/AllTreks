@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import HikeShow from "./hike_show";
-import { fetchHike } from "../../actions/hike_actions";
+import { fetchHike, clearHikes } from "../../actions/hike_actions";
 import {fetchReviews} from '../../actions/review_actions'
 
 const mSTP = (state, ownProps) => {
@@ -14,7 +14,9 @@ const mSTP = (state, ownProps) => {
 const mDTP = (dispatch) => {
     return {
         fetchHike: hikeId => dispatch(fetchHike(hikeId)),
-        fetchReviews: () => dispatch(fetchReviews())
+        fetchReviews: () => dispatch(fetchReviews()),
+        // clearHikes: () => dispatch(clearHikes()),
+
     }
 }
 

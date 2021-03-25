@@ -10,7 +10,7 @@ class ParkMap extends React.Component {
 
     constructor(props) {
         super(props);
-        let zoom = (this.props.parent === "park") ? 7.65 : 8
+        let zoom = (this.props.parent === "park") ? 7.65 : 14
         this.state = {
             lng: this.props.location.lng,
             lat: this.props.location.lat,
