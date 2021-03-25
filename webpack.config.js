@@ -1,5 +1,12 @@
 const path = require('path');
 
+let devtool;
+if (process.env.NODE_ENV==="production") {
+    devtool = "eval"
+} else {
+    devtool = "source-map"
+}
+
 module.exports = {
     context: __dirname,
     entry: './frontend/all_treks.jsx',
@@ -7,7 +14,7 @@ module.exports = {
         path: path.resolve(__dirname, "app", "assets", "javascripts"),
         filename: 'bundle.js'
     },
-    devtool: 'source-map',
+    devtool: devtool,
     resolve: {
         extensions: [".js", ".jsx", "*"],
     },
