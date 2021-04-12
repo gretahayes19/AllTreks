@@ -94,7 +94,7 @@ class ParkShow extends React.Component {
                         <ParkMap parent="park" location={park}/>
                         <div className="park-actions">
                             <div className="park-action">
-                                <a href={`https://www.google.com/maps/dir/Current+Location/${park.lat},${park.lng}`} >
+                                <a target="_blank" href={`https://www.google.com/maps/dir/Current+Location/${park.lat},${park.lng}`} >
                                     <FontAwesomeIcon icon={faRoute} />
                                     <p>Directions</p>
                                 </a>

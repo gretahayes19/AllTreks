@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SubNavContainer from '../nav/subnav_container'
 import { faRoute, faPrint, faShare, faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import ReactStars from "react-rating-stars-component";
 
 
 class HikeShow extends React.Component {
@@ -18,6 +19,7 @@ class HikeShow extends React.Component {
             reviewForm: false,
         }
         this.showReviewForm = this.showReviewForm.bind(this)
+        // this.averageReivews = this.averageReivews.bind(this)
     }
 
     componentDidMount() {
@@ -37,6 +39,14 @@ class HikeShow extends React.Component {
         this.setState({reviewForm: !this.state.reviewForm})
     }
 
+    averageReivews(reviews) {
+        let reviewSum = 0;
+        reviews.forEach(review => {
+            reviewSum += review.rating;
+        })
+        return reviewSum/reviews.length;
+    }
+
     render () {
         
         if (!this.props.hike || !this.props.hike.thisHike) return null;
@@ -44,10 +54,22 @@ class HikeShow extends React.Component {
 
         const {hike, currentUser, reviews} = this.props
         
+
+
+
         const thisHike = hike.thisHike;
         const nearbyHikes = hike.nearbyHikes;
         const sortedReviews = reviews.slice().filter(review => review.hike_id === thisHike.id).reverse()
         const numReviews = sortedReviews.length
+
+        const avgRating = this.averageReivews(sortedReviews);
+
+        const starOps = {
+            size: 18,
+            isHalf: true,
+            edit: false,
+            value: avgRating,
+        };
 
         const writeReview = (currentUser ? (
             <div>
@@ -66,12 +88,16 @@ class HikeShow extends React.Component {
                     </div>
                     <div className="hike-title-content">
                         <h1 className="header-text1">{thisHike.name}</h1>
-                        <span className={`hike-difficulty ${thisHike.difficulty}`}>{thisHike.difficulty}</span>
+                        <div className="difficulty-rating">
+                            <span className={`hike-difficulty ${thisHike.difficulty}`}>{thisHike.difficulty}</span>
+                            <ReactStars {...starOps} />
+                            <p>({sortedReviews.length})</p>
+                        </div>        
                         <p>{hike.thisHike.parkName}</p>
                     </div>
                     <div className="hike-actions-wrap">
                             <div className="hike-action">
-                                <a href={`https://www.google.com/maps/dir/Current+Location/${thisHike.lat},${thisHike.lng}`} >
+                                <a target="_blank" href={`https://www.google.com/maps/dir/Current+Location/${thisHike.lat},${thisHike.lng}`} >
                                     <FontAwesomeIcon icon={faRoute} />
                                     <p>Directions</p>
                                 </a>

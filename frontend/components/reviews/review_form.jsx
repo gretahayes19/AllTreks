@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactStars from "react-rating-stars-component";
 
 
 
@@ -24,13 +25,25 @@ class ReviewForm extends React.Component {
 
 
     render () {
+
+        const starOps = {
+            size: 30,
+            value: 2.5,
+            isHalf: false,
+            onChange: (newValue) => {
+                this.setState({ rating: newValue });
+            },
+        };
+
         return (
             <div>
                 <div>
                     <form onSubmit={this.handleSubmit} className="review-form">
                         <p>Rating</p>
-                        <div className="rating-select" onChange={this.update("rating")}>
-                            <label className="review-star">★
+                       
+                        <div className="rating-select">
+                            <ReactStars {...starOps} />
+                            {/* <label className="review-star">★
                             <input type="radio" name="rating" value="5" />
                             </label>
 
@@ -48,7 +61,7 @@ class ReviewForm extends React.Component {
 
                             <label className="review-star">★
                             <input type="radio" name="rating" value="1" required />
-                            </label>
+                            </label> */}
                         </div>
                             <p>Date</p>
                             <input
