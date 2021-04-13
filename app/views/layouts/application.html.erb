@@ -4,7 +4,11 @@
     <title>AllTreks</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link rel="icon" href="../../app/assets/images/mountain-solid.png"/>
+    <meta property="og:title" content="AllTreks"/>
+    <meta property="og:url" content="http://all-treks.herokuapp.com/"/>
+    <meta property="og:image" content="<%=image_url('screenshot.png')%>"/>
+    <meta property="og:description" content="AllTreks is a full-stack web application inspired by AllTrails and built with Ruby on Rails and PostgreSQL on the backend, React.js using Redux framework for the frontend, and enhanced by the Mapbox API and AWS file storage."/>
+    <link rel="icon" href="<%=image_url('mountain-solid.png')%>"/>
     <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&family=Montserrat:wght@400;500;600;700&family=Varela+Round&display=swap" rel="stylesheet">    
     <%= stylesheet_link_tag    'application', media: 'all' %>
