@@ -10,6 +10,10 @@ class SessionForm extends React.Component {
         this.demo = this.demo.bind(this)
     }
 
+    componentDidMount() {
+        this.props.clearErrors();
+    }
+
     update(field) {
         return (e) => {
             this.setState({ [field]: e.target.value })
@@ -60,6 +64,26 @@ class SessionForm extends React.Component {
             </>
         ) : "" )
 
+        const passwordError = (errors ? (
+            errors.map((error, idx) => {
+                if (error.includes("Password")) {
+                    return (<ul className="form-errors">
+                        <li key={idx}>{error}</li>
+                    </ul>)
+                } 
+            })
+        ) : "")
+
+        const emailError = (errors ? (
+            errors.map((error, idx) => {
+                if (error.includes("Email")) {
+                    return (<ul className="form-errors">
+                        <li key={idx}>You already have an accoount.  Please log in.</li>
+                    </ul>)
+                }
+            })
+        ) : "")
+
         const errorsComp = (errors ? (
             <ul className="form-errors">
                 {errors.map((error, idx) => (
@@ -74,10 +98,10 @@ class SessionForm extends React.Component {
                     <h1>{formTitle}</h1>
                     <form onSubmit={this.handleSubmit}>
                         {additionalFields}
-                            <label for="email" className="text-input">
+                            <label className="text-input">
                                 <input
-                                    id="email"
-                                    type="text"
+                                    // id="email"
+                                    type="email"
                                     placeholder="Email"
                                     value={this.state.email}
                                     onChange={this.update("email")}
@@ -91,7 +115,10 @@ class SessionForm extends React.Component {
                                 onChange={this.update("password")}
                                 required/>
                         </label>
-                        {errorsComp}
+                        {passwordError}
+                        {emailError}
+                        {(formType === "Log in") ? errorsComp : null}
+                        {/* {errorsComp} */}
                         <button className="primary-button">{formType}</button>
                     </form>
                     <p>{otherFormText} {otherFormLink}</p>
