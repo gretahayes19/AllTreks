@@ -110,10 +110,10 @@ class HikeShow extends React.Component {
                                 </a>
                             </div>
                             <div className="hike-action">
-                                <Link to="#">
+                            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=all-treks.herokuapp.com">
                                     <FontAwesomeIcon icon={faShare} />
                                     <p>Share</p>
-                                </Link>
+                                </a>
                             </div>
                     </div>
                 </div>
