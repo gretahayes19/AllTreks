@@ -48,7 +48,7 @@ class SubNav extends React.Component {
                 <div className="breadcrumbs">
                     <p>United State of America</p>
                     <FontAwesomeIcon icon={faChevronRight} />
-                    <p>Washington</p> 
+                    {parkId === 1 ? <p>Washington</p> : <p>Maine</p> }
                     <FontAwesomeIcon icon={faChevronRight} />
                         <p><Link to={`/parks/${parkId}`}>{parkName}</Link></p>
                 </div>
