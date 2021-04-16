@@ -11,14 +11,11 @@ export const receiveHike = (hike) => {
     }
 }
 
-// export const clearHikes = () => {
-//     return {
-//         type: CLEAR_HIKES,
-//     }
-// }
-
-
-
+export const removeHikes = () => {
+    return {
+        type: CLEAR_HIKES,
+    }
+}
 
 
 export const fetchHike = hikeId => dispatch => {
@@ -26,6 +23,6 @@ export const fetchHike = hikeId => dispatch => {
     .then(hike => dispatch(receiveHike(hike)));
 }
 
-// export const clearHikes = () => dispatch => {
-//     return dispatch(clearHikes());
-// }
+export const clearHikes = () => dispatch => {
+    return dispatch(removeHikes());
+}

@@ -13,8 +13,8 @@ const hikesReducer = (state = {}, action) => {
         case RECEIVE_HIKE:
             newState[action.hike.thisHike.id] = action.hike
             return newState
-        // case CLEAR_HIKES:
-        //     return {};
+        case CLEAR_HIKES:
+            return {};
         default:
             return state;
     }

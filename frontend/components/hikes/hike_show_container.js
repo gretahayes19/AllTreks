@@ -15,7 +15,7 @@ const mDTP = (dispatch) => {
     return {
         fetchHike: hikeId => dispatch(fetchHike(hikeId)),
         fetchReviews: () => dispatch(fetchReviews()),
-        // clearHikes: () => dispatch(clearHikes()),
+        clearHikes: () => dispatch(clearHikes()),
 
     }
 }

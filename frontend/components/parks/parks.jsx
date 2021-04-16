@@ -20,6 +20,7 @@ class ParkShow extends React.Component {
     
 
     componentDidMount() {
+        this.props.clearHikes()
         this.props.fetchPark(this.props.match.params.parkId)
         this.props.fetchParkHikes(this.props.match.params.parkId)
     }
@@ -48,7 +49,9 @@ class ParkShow extends React.Component {
         if (!this.props.hikes) return null;
 
         const {park, hikes} = this.props 
-        // const filteredHikes = hikes.slice().filter(hike => hike.park_id === park.id)
+        const filteredHikes = hikes.slice().filter(hike => hike.park_id === park.id)
+        // console.log(filteredHikes)
+        // console.log(hikes)
 
         const photoCarousel = hikes.map((hike, idx) => (
             <img className="carousel-item" key={idx} src={hike.coverPhotoURL} alt={hike.name}/>

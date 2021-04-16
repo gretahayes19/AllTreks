@@ -23,6 +23,7 @@ class HikeShow extends React.Component {
     }
 
     componentDidMount() {
+        this.props.clearHikes();
         this.props.fetchReviews();
         this.props.fetchHike(this.props.match.params.hikeId);
     }
