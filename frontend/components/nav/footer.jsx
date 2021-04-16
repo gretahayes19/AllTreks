@@ -16,7 +16,6 @@ const Footer = () => {
                     </Link>
                 </div>
                 <div class="footer-logo links">
-                    <p></p>
                     <a href="https://www.linkedin.com/in/greta-hayes-4a5b4559/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                     <a href="https://github.com/gretahayes19/bltbonanza" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="https://www.gretahayes.com" target="_blank"><i class="far fa-smile-beam"></i></a>

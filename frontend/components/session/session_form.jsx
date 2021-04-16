@@ -78,7 +78,7 @@ class SessionForm extends React.Component {
             errors.map((error, idx) => {
                 if (error.includes("Email")) {
                     return (<ul className="form-errors">
-                        <li key={idx}>You already have an accoount.  Please log in.</li>
+                        <li key={idx}>You already have an account.  Please log in.</li>
                     </ul>)
                 }
             })
