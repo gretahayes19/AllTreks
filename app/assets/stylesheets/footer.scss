@@ -3,9 +3,15 @@
 
 .footer-content {
     background-color: $backgroundGrey;
-    position: relative;
+    position: fixed;
+    bottom: 0;
     display: flex;
-    height: 200px;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-bottom: 3vh;
+    height: 40vh;
+    width: 100vw;
+    z-index: -99;
 }
 
 
@@ -24,6 +30,11 @@
         display: flex;
         align-items: baseline;
     }
+}
+
+.links a {
+    padding: 15px;
+    padding-bottom: 0;
 }
 
 .footer-mountain-logo {

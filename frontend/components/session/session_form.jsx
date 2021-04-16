@@ -98,15 +98,19 @@ class SessionForm extends React.Component {
                     <h1>{formTitle}</h1>
                     <form onSubmit={this.handleSubmit}>
                         {additionalFields}
+                        {/* <div className="input-container">
+                            <div className="floater">Email</div> */}
                             <label className="text-input">
-                                <input
-                                    // id="email"
-                                    type="email"
-                                    placeholder="Email"
-                                    value={this.state.email}
-                                    onChange={this.update("email")}
-                                    required />
+                            <input
+                                type="email"
+                                placeholder="Email"
+                                value={this.state.email}
+                                onChange={this.update("email")}
+                                required />
                             </label>
+                        {/* </div> */}
+
+                    
                         <label className="text-input">
                             <input 
                                 type="password" 

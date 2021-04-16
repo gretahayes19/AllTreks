@@ -64,7 +64,9 @@
 .session-form input {
     color: $darkGrey;
     font-size: 14px;
+    
 }
+
 
 
 .session-form label {
@@ -74,6 +76,17 @@
 }
 
 //////
+
+// .floater {
+//     color: red;
+// }
+
+// .input-container {
+//     border: $inputBorder;
+//     border-radius: 8px;
+//     cursor: text;
+//     width: 100%;
+// }
 
 
 
@@ -123,4 +136,5 @@ textarea {
 .text-input:focus-within {
     border: 2px solid $green;
 }
+
 
