@@ -3,6 +3,8 @@ class Api::HikesController < ApplicationController
     def index
         @hikes = Hike
                     .includes(coverPhoto_attachment: :blob)
+                    .joins(:reviews).group('hikes.id')
+                    .select("hikes.*, AVG(reviews.rating) as avg_rating, COUNT(reviews.id) as num_reviews")
                     .where(park_id: params[:park_id])
 
 
@@ -18,4 +20,6 @@ class Api::HikesController < ApplicationController
                         
         render :show
     end
+
+
 end

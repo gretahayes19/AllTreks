@@ -20,10 +20,24 @@ class ParkShow extends React.Component {
     
 
     componentDidMount() {
-        this.props.clearHikes()
-        this.props.fetchPark(this.props.match.params.parkId)
-        this.props.fetchParkHikes(this.props.match.params.parkId)
+        this.props.clearHikes();
+        this.props.clearPark();
+        this.props.fetchPark(this.props.match.params.parkId);
+        this.props.fetchParkHikes(this.props.match.params.parkId);
     }
+
+
+    componentWillUnmount() {
+        this.props.clearPark();
+    }
+
+    // componentDidUpdate() {
+    //     // debugger
+    //     if(this.props.park && (this.props.park.id !== this.props.match.params.parkId)) {
+    //         // this.props.clearPark();
+    //         this.props.fetchPark(this.props.match.params.parkId);
+    //     }
+    // }
 
     carouselNav(e) {
         e.preventDefault();
@@ -45,11 +59,18 @@ class ParkShow extends React.Component {
 
 
     render() {
+
         if (!this.props.park) return null;
+
+        // if (this.props.park.id !== this.props.match.params.parkId) return null;
+
         if (!this.props.hikes) return null;
+        console.log(this.props.park.id)
+        console.log(this.props.match.params.parkId)
+
 
         const {park, hikes} = this.props 
-        const filteredHikes = hikes.slice().filter(hike => hike.park_id === park.id)
+        // const filteredHikes = hikes.slice().filter(hike => hike.park_id === park.id)
         // console.log(filteredHikes)
         // console.log(hikes)
 
@@ -109,10 +130,10 @@ class ParkShow extends React.Component {
                                 </a>
                             </div>
                             <div className="park-action">
-                                <Link to="#">
+                                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=all-treks.herokuapp.com">
                                     <FontAwesomeIcon icon={faShare} />
                                     <p>Share</p>
-                                </Link>
+                                </a>
                             </div>
                         </div>
                     </section>
