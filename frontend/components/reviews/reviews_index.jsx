@@ -11,9 +11,17 @@ const ReviewIndex = ({ reviews }) => {
         edit: false,
     };
 
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"];
+
     
+
+    function formatDate(date) {
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"];
+
+        let splitDate = date.split("-");
+        return `${monthNames[parseInt(splitDate[1]) - 1]} ${splitDate[2]}, ${splitDate[0]}`;
+    }
+
 
     return (
         <ul className="review-index">
@@ -27,6 +35,7 @@ const ReviewIndex = ({ reviews }) => {
                             <h3 className="header-text3">{review.reviewer.firstname} {review.reviewer.lastname}</h3>
                             
                             <ReactStars value={review.rating} {...starOps} />
+                            <p>{formatDate(review.activity_date)}</p>
                         </div>
                     </div>
 
