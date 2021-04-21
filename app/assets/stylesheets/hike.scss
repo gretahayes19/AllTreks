@@ -371,11 +371,20 @@
 }
 
 
+.review-text {
+    padding-top: 10px;
+}
 .review-header {
     display: flex;
-    flex-direction: row;
-    flex: 1
+    flex-direction: column;
+    flex: 1;
+    margin-left: 10px;
+
+    span {
+        margin-right: 5px;
+    }
 }
+
 
 .review-item {
     border-bottom: $contentBorder;
@@ -390,6 +399,11 @@
     p {
         font-family: $bodyFont;
     }
+}
+
+.review-pic-name {
+    display: flex;
+    flex-direction: row;
 }
 
 .write-review-button {
