@@ -33,9 +33,11 @@ const ReviewIndex = ({ reviews }) => {
                         </div>
                         <div className="review-header">
                             <h3 className="header-text3">{review.reviewer.firstname} {review.reviewer.lastname}</h3>
-                            
-                            <ReactStars value={review.rating} {...starOps} />
-                            <p>{formatDate(review.activity_date)}</p>
+                            <div className="star-date"> 
+                                <ReactStars value={review.rating} {...starOps} />
+                                <p>{formatDate(review.activity_date)}</p>
+                            </div>
+
                         </div>
                     </div>
 

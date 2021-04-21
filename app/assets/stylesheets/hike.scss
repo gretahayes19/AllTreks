@@ -386,6 +386,18 @@
 }
 
 
+.star-date {
+    margin-top: 3px;
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    align-items: center;
+    
+    p{ 
+        margin-left: 5px;   
+    }
+}
+
 .review-item {
     border-bottom: $contentBorder;
     padding: 20px 0;
