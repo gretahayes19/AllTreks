@@ -142,9 +142,9 @@ class ParkShow extends React.Component {
                     <section className="park-description">
                         <h1 className="header-text1">Best trails in {park.name}</h1>
                         {(numParkReview && parkRating) ? (
-                            <div className="difficulty-rating">
+                            <div className="park-rating">
                                 <ReactStars {...starOps} />
-                                <p>({numParkReview})</p>
+                                <p>{numParkReview} Reviews</p>
                             </div>
                         ) : null }
                         <p className="about">{park.about}</p>

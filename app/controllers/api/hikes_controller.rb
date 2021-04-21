@@ -17,6 +17,9 @@ class Api::HikesController < ApplicationController
                         .where(park_id: @hike.park_id)  
                         .includes(coverPhoto_attachment: :blob)
                         .where.not(id: @hike.id)
+                        .joins(:reviews).group('hikes.id')
+                        .select("hikes.*, AVG(reviews.rating) as avg_rating, COUNT(reviews.id) as num_reviews")
+
                         
         render :show
     end

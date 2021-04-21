@@ -281,13 +281,13 @@
             box-shadow: 0 2px 4px 0 rgba(0,0,0,.24), 0 0 8px 0 rgba(0,0,0,.08);
             background-color: #fff;
             overflow: hidden;
-            
             cursor: pointer;
             position: relative;
             margin-bottom: 24px;
 
             img {
-                height: 128px;
+                margin-top: -60px;
+                // height: 128px;
                 width: 291px;
                 border-radius: 0;
             }
@@ -323,8 +323,8 @@
         color: $mediumGrey;
         font-weight: 375;
         font-size: 14px;
-        margin: 5px 0;
-        margin-top: 7px;
+        margin-bottom: 5px;
+        margin-top: 5px;
      }
 
      .hike-description {
@@ -334,12 +334,17 @@
 
      .hike-difficulty {
         padding: 4px 12px;
+        margin-right: 5px;
         color: white;
         border-radius: 8px;
         font-family: inherit;
         font-size: 11px;
         margin-bottom: 10px;
     }
+
+    // .num-reviews {
+    //     margin-left: 5px;
+    // }
 
     .moderate {
         background-color: $buttonBlue;
@@ -351,6 +356,17 @@
 
     .easy {
         background-color: $buttonGreen;
+    }
+
+    .difficulty-rating {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        span {
+            margin-right: 5px;
+        }
+        
     }
 }
 

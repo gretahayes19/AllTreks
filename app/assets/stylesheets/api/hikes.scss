@@ -73,6 +73,7 @@
         color: white;
         border-radius: 8px;
         font-family: inherit;
+
         // margin-bottom: 4px;
         font-size: 11px;
     }
@@ -98,5 +99,23 @@
 
     .easy {
         background-color: $buttonGreen;
+    }
+}
+
+.park-rating {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 2px;
+    padding-bottom: 10px;
+    font-size: 14px;
+
+    p {
+        padding-left: 5px;
+        text-align: end;
+    }
+
+    span {
+        margin-right: 5px;
     }
 }

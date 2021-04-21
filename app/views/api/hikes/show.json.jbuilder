@@ -15,7 +15,7 @@
 
     json.nearbyHikes do
         json.array! @nearby_hikes do |hike|
-                json.extract! hike, :id, :name, :description, :summary, :lat, :lng, :elevation, :difficulty, :distance, :route_type
+                json.extract! hike, :id, :name, :description, :summary, :lat, :lng, :elevation, :difficulty, :distance, :route_type, :avg_rating, :num_reviews
                 json.coverPhotoURL url_for(hike.coverPhoto)
         end
     end
