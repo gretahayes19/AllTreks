@@ -55,8 +55,8 @@
         font-weight: 375;
         font-size: 14px;
         margin: 5px 0;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
      }
 
      .hike-description {
@@ -67,13 +67,25 @@
      }
 
      .hike-difficulty {
-        padding: 4px 12px;
+        padding: 4px 20px;
+        text-align: center;
+        // padding-bottom: 6px;
         color: white;
         border-radius: 8px;
         font-family: inherit;
+        // margin-bottom: 4px;
         font-size: 11px;
-        overflow: hidden;
-        text-overflow: ellipsis;
+    }
+
+    .difficulty-rating {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+
+        span {
+            margin-right: 5px;
+        }
     }
 
     .moderate {

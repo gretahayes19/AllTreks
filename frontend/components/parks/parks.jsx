@@ -4,6 +4,8 @@ import HikeIndex from '../hikes/hike_index'
 import SubNavContainer from '../nav/subnav_container'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRoute, faPrint, faShare, faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import ReactStars from "react-rating-stars-component";
+
 import { Link } from 'react-router-dom';
 
 class ParkShow extends React.Component {
@@ -57,6 +59,24 @@ class ParkShow extends React.Component {
         })
     }
 
+    averageRating(hikes) {
+        let avg = 0;
+        hikes.forEach(hike => {
+            avg += parseFloat(hike.avg_rating);
+        })
+        let result = avg / hikes.length
+        console.log(result);
+        return result;
+    }
+
+    numRatings(hikes) {
+        let num = 0;
+        hikes.forEach(hike => {
+            num += hike.num_reviews;
+        })
+
+        return num;
+    }
 
     render() {
 
@@ -65,9 +85,6 @@ class ParkShow extends React.Component {
         // if (this.props.park.id !== this.props.match.params.parkId) return null;
 
         if (!this.props.hikes) return null;
-        console.log(this.props.park.id)
-        console.log(this.props.match.params.parkId)
-
 
         const {park, hikes} = this.props 
         // const filteredHikes = hikes.slice().filter(hike => hike.park_id === park.id)
@@ -77,6 +94,18 @@ class ParkShow extends React.Component {
         const photoCarousel = hikes.map((hike, idx) => (
             <img className="carousel-item" key={idx} src={hike.coverPhotoURL} alt={hike.name}/>
         ))
+
+        const parkRating = this.averageRating(hikes);
+        console.log(parkRating)
+        const numParkReview = this.numRatings(hikes);
+        console.log(numParkReview)
+        const starOps = {
+            size: 18,
+            isHalf: true,
+            edit: false,
+            value: parkRating,
+        };
+
 
 
         const carouselButtons = (
@@ -112,6 +141,12 @@ class ParkShow extends React.Component {
                     </div>
                     <section className="park-description">
                         <h1 className="header-text1">Best trails in {park.name}</h1>
+                        {(numParkReview && parkRating) ? (
+                            <div className="difficulty-rating">
+                                <ReactStars {...starOps} />
+                                <p>({numParkReview})</p>
+                            </div>
+                        ) : null }
                         <p className="about">{park.about}</p>
                         <h2 className="header-text2">Description</h2>
                         <p className="description">{park.description}</p>
