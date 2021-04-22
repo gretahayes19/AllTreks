@@ -19,7 +19,9 @@ const Home = ({currentUser}) => {
                 {(!currentUser) ? (<Link to="/signup" className="sign-up-button-home">Sign up for free</Link>) : null }
             </div>
             <div className="homepage2">
-
+                <div className="homepage-content2">
+                    <h1>Hit the trail with confidence</h1>
+                </div>
             </div>
         </div>
 

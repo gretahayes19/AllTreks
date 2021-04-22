@@ -22,8 +22,16 @@
     text-align: center;
     font-family: $titleFont;
     font-size: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+
+.homepage-content2{
+    font-size: 55px;
+}
 
 .homepage-content {
     position: absolute;
