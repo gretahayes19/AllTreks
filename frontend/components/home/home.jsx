@@ -18,6 +18,9 @@ const Home = ({currentUser}) => {
                 <p>The beauty of nature doesn’t need to be hard to find. Our goal is simple - build the largest collection of hand-curated trail guides, so you can explore the outdoors with confidence. Anytime. Anywhere.</p>
                 {(!currentUser) ? (<Link to="/signup" className="sign-up-button-home">Sign up for free</Link>) : null }
             </div>
+            <div className="homepage2">
+
+            </div>
         </div>
 
     )
