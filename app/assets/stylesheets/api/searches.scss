@@ -25,9 +25,15 @@
 
     input {
         width: 100%;
-        color: $darkGrey;
+        color: $lighterGrey;
         text-align: left;
+  
     }   
+
+    input::placeholder {
+        color: $lighterGrey;
+
+    }
 
     button {
         background-color: $buttonGreen;
@@ -42,11 +48,18 @@
     }
 
     svg {
-        color: $grey;
-        padding: 20px;
+        color: $lighterGrey;
+        padding: 25px;
         cursor: text;
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    path {
+        width: 10px;
     }
 }
+
 
 .search-results {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;

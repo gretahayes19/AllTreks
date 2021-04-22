@@ -47,7 +47,8 @@ class SearchBar extends React.Component {
             <>
                 <div className="search-bar" onFocus={this.handleFocus} onBlur={this.handleBlur}>
                     <form onSubmit={this.handleSubmit} className="search-input">
-                        <FontAwesomeIcon icon={faSearch} />
+                     <FontAwesomeIcon icon={faSearch} />
+                        
                         <input type="text" placeholder="Enter a park or trail name" onChange={this.update()}/>
                         <button>Search</button>
                     </form>
