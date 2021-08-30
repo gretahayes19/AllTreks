@@ -4,7 +4,7 @@ import { faMountain, faHiking } from "@fortawesome/free-solid-svg-icons";
 import ReactStars from "react-rating-stars-component";
 
 
-const ReviewIndex = ({ reviews }) => {
+const ReviewIndex = ({ editForm, showEditForm, deleteReview, reviews, currentUser }) => {
     const starOps = {
         size: 17,
         isHalf: false,
@@ -23,10 +23,13 @@ const ReviewIndex = ({ reviews }) => {
     }
 
 
+    // console.log(editForm)
+    // console.log(((review.id === currentUser.id) && editForm))
     return (
         <ul className="review-index">
             {reviews.map((review, idx) => (
-                <li className="review-item" key={review.id}>
+                ((review.user_id === currentUser.id) && editForm) ? <p key={review.id}>edit form</p> :
+                ( <li className="review-item" key={review.id}>
                     <div className="review-pic-name">
                         <div className="profile-pic" >
                             < FontAwesomeIcon icon={faHiking} />
@@ -42,8 +45,14 @@ const ReviewIndex = ({ reviews }) => {
                     </div>
 
                     <p className="review-text">{review.review_text}</p>
-                    
-                </li>
+                    {currentUser.id === review.user_id ? (
+                        <p><span className="delete-review-text" 
+                            onClick={() => deleteReview(review.id)}>Delete</span>  |  
+                        <span className="edit-review-text" 
+                            onClick={() => showEditForm()}>Edit</span></p>
+                        ) : null}
+                </li>)
+
             ))}
         </ul>
     )

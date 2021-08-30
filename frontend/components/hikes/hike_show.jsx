@@ -17,8 +17,10 @@ class HikeShow extends React.Component {
 
         this.state = {
             reviewForm: false,
+            editForm: false,
         }
         this.showReviewForm = this.showReviewForm.bind(this)
+        this.showEditForm = this.showEditForm.bind(this)
         // this.averageReivews = this.averageReivews.bind(this)
     }
 
@@ -40,6 +42,11 @@ class HikeShow extends React.Component {
         this.setState({reviewForm: !this.state.reviewForm})
     }
 
+    showEditForm() {
+        console.log("in show edit form")
+        this.setState({editForm: !this.state.editForm})
+    }
+
     averageReivews(reviews) {
         let reviewSum = 0;
         reviews.forEach(review => {
@@ -53,7 +60,7 @@ class HikeShow extends React.Component {
         if (!this.props.hike || !this.props.hike.thisHike) return null;
 
 
-        const {hike, currentUser, reviews} = this.props
+        const {hike, currentUser, reviews, deleteReview} = this.props
         
 
 
@@ -62,6 +69,7 @@ class HikeShow extends React.Component {
         const nearbyHikes = hike.nearbyHikes;
         const sortedReviews = reviews.slice().filter(review => review.hike_id === thisHike.id).reverse()
         const numReviews = sortedReviews.length
+
 
         const avgRating = this.averageReivews(sortedReviews);
 
@@ -75,7 +83,7 @@ class HikeShow extends React.Component {
         const writeReview = (currentUser ? (
             <div>
             <span className="write-review-button" onClick={this.showReviewForm}>Write review</span>
-                {this.state.reviewForm ? (<ReviewFormContainer hikeId={thisHike.id} />) : null }
+                {this.state.reviewForm ? (<ReviewFormContainer hideReviewForm={this.showReviewForm} hikeId={thisHike.id} />) : null }
             </div>
          ) : null)
 
@@ -149,7 +157,11 @@ class HikeShow extends React.Component {
                         </div>
                         {writeReview}
                         <div className="hike-left-4">
-                            <ReviewIndex reviews={sortedReviews}/>
+                            <ReviewIndex editForm={this.state.editForm} 
+                                showEditForm={this.showEditForm} 
+                                deleteReview={deleteReview} 
+                                currentUser={currentUser} 
+                                reviews={sortedReviews}/>
                         </div>
                     </div>
                     <div className="hike-right">

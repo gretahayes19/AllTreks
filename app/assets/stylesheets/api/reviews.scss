@@ -47,3 +47,22 @@
     }
 }
 
+.delete-review-text {
+    color: $green;
+    font-size: 13px;
+    padding-right: 10px;
+}
+
+.edit-review-text {
+    color: $green;
+    font-size: 13px;
+    padding-left: 10px;
+}
+
+.delete-review-text:hover {
+    cursor: pointer;
+}
+
+.edit-review-text:hover {
+    cursor: pointer;
+}

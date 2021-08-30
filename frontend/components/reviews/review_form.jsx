@@ -5,6 +5,7 @@ import ReactStars from "react-rating-stars-component";
 
 class ReviewForm extends React.Component {
     constructor(props) {
+        console.log(props)
         super(props)
         this.state = this.props.initialState;
 
@@ -14,6 +15,7 @@ class ReviewForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createReview(this.state);
+        this.props.hideReviewForm();
         this.setState(this.props.initialState)
     }
 
