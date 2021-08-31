@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import HikeShow from "./hike_show";
 import { fetchHike, clearHikes } from "../../actions/hike_actions";
-import {fetchReviews, deleteReview} from '../../actions/review_actions'
+import {fetchReviews, deleteReview, updateReview} from '../../actions/review_actions'
 
 const mSTP = (state, ownProps) => {
     return {
@@ -16,7 +16,8 @@ const mDTP = (dispatch) => {
         fetchHike: hikeId => dispatch(fetchHike(hikeId)),
         fetchReviews: () => dispatch(fetchReviews()),
         clearHikes: () => dispatch(clearHikes()),
-        deleteReview: id => dispatch(deleteReview(id))
+        deleteReview: id => dispatch(deleteReview(id)),
+        updateReview: reviewId => dispatch(updateReview(reviewId))
     }
 }
 

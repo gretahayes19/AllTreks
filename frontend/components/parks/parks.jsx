@@ -96,9 +96,7 @@ class ParkShow extends React.Component {
         ))
 
         const parkRating = this.averageRating(hikes);
-        console.log(parkRating)
         const numParkReview = this.numRatings(hikes);
-        console.log(numParkReview)
         const starOps = {
             size: 18,
             isHalf: true,

@@ -43,7 +43,6 @@ class HikeShow extends React.Component {
     }
 
     showEditForm() {
-        console.log("in show edit form")
         this.setState({editForm: !this.state.editForm})
     }
 
@@ -60,7 +59,7 @@ class HikeShow extends React.Component {
         if (!this.props.hike || !this.props.hike.thisHike) return null;
 
 
-        const {hike, currentUser, reviews, deleteReview} = this.props
+        const {hike, currentUser, reviews, deleteReview, updateReview} = this.props
         
 
 
@@ -161,6 +160,8 @@ class HikeShow extends React.Component {
                                 showEditForm={this.showEditForm} 
                                 deleteReview={deleteReview} 
                                 currentUser={currentUser} 
+                                updateReview={updateReview}
+                                hideEditForm={this.showEditForm}
                                 reviews={sortedReviews}/>
                         </div>
                     </div>

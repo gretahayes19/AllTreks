@@ -2,16 +2,23 @@ import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMountain, faHiking } from "@fortawesome/free-solid-svg-icons";
 import ReactStars from "react-rating-stars-component";
+import EditReviewFormContainer from './edit_review_form_container'
 
-
-const ReviewIndex = ({ editForm, showEditForm, deleteReview, reviews, currentUser }) => {
+const ReviewIndex = ({ editForm, showEditForm, deleteReview, reviews, currentUser, hideEditForm }) => {
     const starOps = {
         size: 17,
         isHalf: false,
         edit: false,
     };
 
-
+    const updatestarOps = {
+        size: 30,
+        value: 2.5,
+        isHalf: false,
+        // onChange: (newValue) => {
+        //     this.setState({ rating: newValue });
+        // },
+    };
     
 
     function formatDate(date) {
@@ -23,12 +30,16 @@ const ReviewIndex = ({ editForm, showEditForm, deleteReview, reviews, currentUse
     }
 
 
+
     // console.log(editForm)
     // console.log(((review.id === currentUser.id) && editForm))
     return (
         <ul className="review-index">
             {reviews.map((review, idx) => (
-                ((review.user_id === currentUser.id) && editForm) ? <p key={review.id}>edit form</p> :
+                ((review.user_id === currentUser.id) && editForm) ? 
+                (
+                        <EditReviewFormContainer initialState={review} hideEditForm={hideEditForm}/>
+                ) :
                 ( <li className="review-item" key={review.id}>
                     <div className="review-pic-name">
                         <div className="profile-pic" >
