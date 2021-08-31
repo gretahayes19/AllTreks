@@ -20,9 +20,9 @@ const reviewsReducer = (state = [], action) => {
             return newState;
         case UPDATE_REVIEW:
             for(let i = 0; i < newState.length; i++) {
-                console.log(newState[i].id)
-                console.log(action)
-                if (newState[i].id == action.review.id) {
+                // console.log(newState[i].id)
+                // console.log(action.review.id)
+                if (newState[i] && (newState[i].id == action.review.id)) {
                     newState[i] = action.review;
                 }
             }
