@@ -21,6 +21,8 @@ class HikeShow extends React.Component {
         }
         this.showReviewForm = this.showReviewForm.bind(this)
         this.showEditForm = this.showEditForm.bind(this)
+        this.rerenderParentCallback = this.rerenderParentCallback.bind(this);
+
         // this.averageReivews = this.averageReivews.bind(this)
     }
 
@@ -32,6 +34,8 @@ class HikeShow extends React.Component {
 
     componentDidUpdate() {
         if (!this.props.hike) this.props.fetchHike(this.props.match.params.hikeId);
+        // this.props.fetchReviews();
+
     }
 
     // componentDidUnmount() {
@@ -53,6 +57,11 @@ class HikeShow extends React.Component {
         })
         return reviewSum/reviews.length;
     }
+
+    rerenderParentCallback() {
+        this.forceUpdate();
+    }
+    
 
     render () {
         
@@ -162,6 +171,7 @@ class HikeShow extends React.Component {
                                 currentUser={currentUser} 
                                 updateReview={updateReview}
                                 hideEditForm={this.showEditForm}
+                                rerenderParentCallback={this.rerenderParentCallback}
                                 reviews={sortedReviews}/>
                         </div>
                     </div>

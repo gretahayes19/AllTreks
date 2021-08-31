@@ -65,7 +65,6 @@ class ParkShow extends React.Component {
             avg += parseFloat(hike.avg_rating);
         })
         let result = avg / hikes.length
-        console.log(result);
         return result;
     }
 
@@ -82,14 +81,10 @@ class ParkShow extends React.Component {
 
         if (!this.props.park) return null;
 
-        // if (this.props.park.id !== this.props.match.params.parkId) return null;
-
         if (!this.props.hikes) return null;
 
         const {park, hikes} = this.props 
-        // const filteredHikes = hikes.slice().filter(hike => hike.park_id === park.id)
-        // console.log(filteredHikes)
-        // console.log(hikes)
+
 
         const photoCarousel = hikes.map((hike, idx) => (
             <img className="carousel-item" key={idx} src={hike.coverPhotoURL} alt={hike.name}/>

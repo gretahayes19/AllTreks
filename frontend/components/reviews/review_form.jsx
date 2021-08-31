@@ -5,7 +5,6 @@ import ReactStars from "react-rating-stars-component";
 
 class ReviewForm extends React.Component {
     constructor(props) {
-        console.log(props)
         super(props)
         this.state = this.props.initialState;
 

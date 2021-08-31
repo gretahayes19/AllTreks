@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import EditReviewForm from './edit_review_form';
-import { updateReview } from '../../actions/review_actions'
+import { updateReview, fetchReviews  } from '../../actions/review_actions'
 
 const mSTP = (state, ownProps) => {
     return {
@@ -11,6 +11,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => ({
     updateReview: review => dispatch(updateReview(review)),
+    fetchReviews: () => dispatch(fetchReviews())
 })
 
 export default connect(mSTP, mDTP)(EditReviewForm)

@@ -7,22 +7,18 @@ const reviewsReducer = (state = [], action) => {
     switch (action.type) {
         case REMOVE_REVIEW:
             for (let i = 0; i < newState.length; i++) {
-                if (newState[i].id == action.reviewId) {
-                    delete newState[i]
+                if (newState[i].id === action.reviewId) {
+                    return newState.slice(0, i).concat(newState.slice(i+1));
                 }
             }
-            return newState;
         case RECEIVE_REVIEWS:
             return action.reviews;
         case RECEIVE_REVIEW:
-            // newState[action.review.id] = action.review
             newState.push(action.review)
             return newState;
         case UPDATE_REVIEW:
             for(let i = 0; i < newState.length; i++) {
-                // console.log(newState[i].id)
-                // console.log(action.review.id)
-                if (newState[i] && (newState[i].id == action.review.id)) {
+                if (newState[i] && (newState[i].id === action.review.id)) {
                     newState[i] = action.review;
                 }
             }

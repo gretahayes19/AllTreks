@@ -5,7 +5,6 @@ import ReactStars from "react-rating-stars-component";
 
 class EditReviewForm extends React.Component {
     constructor(props) {
-        // console.log(props)
         super(props)
         this.state = this.props.initialState;
 
@@ -14,10 +13,7 @@ class EditReviewForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
-        this.props.updateReview(this.state);
-        this.props.hideEditForm();
-        // this.setState(this.props.initialState)
+        this.props.updateReview(this.state).then(this.props.hideEditForm)
     }
 
     update(field) {
