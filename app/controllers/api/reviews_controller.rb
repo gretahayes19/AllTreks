@@ -18,7 +18,7 @@ class Api::ReviewsController < ApplicationController
     def update
         @review = Review.find_by(id: params[:id])
 
-        if @review.update(review_params)
+        if (@review.user_id == current_user.id) && @review.update(review_params)
             render :show
         else
             render json: @review.errors.full_messages, status: 422
@@ -27,7 +27,9 @@ class Api::ReviewsController < ApplicationController
 
     def destroy
         @review = Review.find_by(id: params[:id])
-        @review.destroy!
+        if @review.user_id == current_user.id
+            @review.destroy!
+        end
     end 
 
     private
