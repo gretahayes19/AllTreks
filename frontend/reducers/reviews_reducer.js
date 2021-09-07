@@ -1,3 +1,4 @@
+import { RECEIVE_HIKE } from '../actions/hike_actions';
 import { UPDATE_REVIEW, RECEIVE_REVIEW, RECEIVE_REVIEWS, REMOVE_REVIEW } from '../actions/review_actions'
 
 
@@ -23,6 +24,8 @@ const reviewsReducer = (state = [], action) => {
                 }
             }
             return newState;
+        case RECEIVE_HIKE:
+            return action.hike.thisHike.reviews
         default:
             return state;
     }

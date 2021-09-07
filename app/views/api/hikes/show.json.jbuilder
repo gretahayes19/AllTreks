@@ -7,8 +7,9 @@
         json.reviews do
             json.array! @hike.reviews do |review| 
                 json.extract! review, :id, :review_text, :rating, :activity_date, :hike_id, :user_id
-                json.reviewerFirst review.reviewer.firstname
-                json.reviewerLast review.reviewer.lastname
+                json.reviewer do 
+                    json.partial! "/api/users/user", user: review.reviewer
+                end 
             end
         end
     end
